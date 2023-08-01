@@ -95,9 +95,11 @@
 import 'package:flutter/material.dart';
 import 'package:wepos/screens/accueil.dart';
 import 'package:wepos/screens/ajouterClient.dart';
+import 'package:wepos/screens/choiceui.dart';
 import 'package:wepos/screens/detailclient.dart';
 import 'package:wepos/screens/listproduits.dart';
 import 'package:wepos/screens/login.dart';
+import 'package:wepos/screens/signInOrUp.dart';
 import 'package:wepos/screens/signup.dart';
 import 'package:wepos/screens/splash/dashboard.dart';
 import 'package:wepos/screens/splash/splash_screen.dart';
@@ -111,12 +113,7 @@ class Bottom extends StatefulWidget {
 
 class _BottomState extends State<Bottom> {
   int index_color = 0;
-  List<Widget> screen = [
-    Accueil(),
-    DetailClient(),
-    SignupPage(),
-    ListProduits()
-  ];
+  List<Widget> screen = [Accueil(), DetailClient(), choiceui(), SignInOrUp()];
 
   @override
   Widget build(BuildContext context) {
