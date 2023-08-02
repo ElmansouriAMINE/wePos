@@ -103,6 +103,7 @@ import 'package:wepos/screens/signInOrUp.dart';
 import 'package:wepos/screens/signup.dart';
 import 'package:wepos/screens/splash/dashboard.dart';
 import 'package:wepos/screens/splash/splash_screen.dart';
+import 'package:wepos/screens/userprofile.dart';
 
 class Bottom extends StatefulWidget {
   const Bottom({Key? key}) : super(key: key);
@@ -113,7 +114,7 @@ class Bottom extends StatefulWidget {
 
 class _BottomState extends State<Bottom> {
   int index_color = 0;
-  List<Widget> screen = [Accueil(), DetailClient(), choiceui(), SignInOrUp()];
+  List<Widget> screen = [UserProfile(), Accueil(), choiceui(), SignInOrUp()];
 
   @override
   Widget build(BuildContext context) {
