@@ -418,9 +418,6 @@ class _MessagerieState extends State<Messagerie>
                                           ],
                                         ))
                                     : Container(),
-                                SizedBox(
-                                  height: 0,
-                                ),
                               ],
                             ),
                           ),
