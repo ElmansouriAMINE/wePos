@@ -99,6 +99,7 @@ import 'package:wepos/screens/choiceui.dart';
 import 'package:wepos/screens/detailclient.dart';
 import 'package:wepos/screens/listproduits.dart';
 import 'package:wepos/screens/login.dart';
+import 'package:wepos/screens/messagerie.dart';
 import 'package:wepos/screens/signInOrUp.dart';
 import 'package:wepos/screens/signup.dart';
 import 'package:wepos/screens/splash/dashboard.dart';
@@ -114,7 +115,7 @@ class Bottom extends StatefulWidget {
 
 class _BottomState extends State<Bottom> {
   int index_color = 0;
-  List<Widget> screen = [UserProfile(), Accueil(), choiceui(), SignInOrUp()];
+  List<Widget> screen = [Messagerie(), Accueil(), choiceui(), SignInOrUp()];
 
   @override
   Widget build(BuildContext context) {
