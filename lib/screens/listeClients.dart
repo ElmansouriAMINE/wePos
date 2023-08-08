@@ -2,82 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:wepos/constants.dart';
 import 'package:wepos/screens/splash/splash_screen.dart';
 
-class Dashboard extends StatefulWidget {
-  const Dashboard({super.key});
+class ListeClients extends StatefulWidget {
+  const ListeClients({super.key});
 
   @override
-  State<Dashboard> createState() => _DashboardState();
+  State<ListeClients> createState() => _ListeClientsState();
 }
 
-class _DashboardState extends State<Dashboard> {
-  int selectedClientIndex = -1;
-
-  Container buildClientList() {
-    return Container(
-      child: Row(
-        children: [
-          Checkbox(
-            shape: const CircleBorder(),
-            value: selectedClientIndex == selectedClientIndex,
-            onChanged: (value) {
-              setState(() {});
-            },
-          ),
-          Container(
-            margin: const EdgeInsets.only(bottom: 8),
-            width: 335,
-            padding: const EdgeInsets.symmetric(horizontal: 25),
-            decoration: BoxDecoration(
-              color: const Color(0xFFFFF9F7),
-              borderRadius: BorderRadius.circular(15),
-              border: Border.all(color: Color(0xFFFDDCD0)),
-            ),
-            child: Row(
-              children: [
-                Container(
-                  height: 90,
-                  width: 70,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/mainImage.png'),
-                      fit: BoxFit.cover,
-                    ),
-                    shape: BoxShape.circle,
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
-                      "AMINE ELMANSOURI",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                    ),
-                    Text(
-                      "HOLA QUESTA",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12,
-                          color: Colors.black),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
+class _ListeClientsState extends State<ListeClients> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFFF5F5F5),
       floatingActionButton: SizedBox(
         width: 70,
         height: 70,
@@ -181,11 +117,11 @@ class _DashboardState extends State<Dashboard> {
                   horizontal: 20,
                 ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
                         height: 45,
-                        width: 280,
+                        width: 350,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(15),
@@ -209,23 +145,23 @@ class _DashboardState extends State<Dashboard> {
                             ),
                           ),
                         )),
-                    Container(
-                      height: 45,
-                      width: 35,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: const Color.fromARGB(255, 212, 144, 167),
-                          width: 2,
-                        ),
-                      ),
-                      child: Image.asset(
-                        'assets/images/parameter.png',
-                        height: 170,
-                        width: 120,
-                      ),
-                    ),
+                    // Container(
+                    //   height: 45,
+                    //   width: 35,
+                    //   decoration: BoxDecoration(
+                    //     color: Colors.white,
+                    //     shape: BoxShape.circle,
+                    //     border: Border.all(
+                    //       color: const Color.fromARGB(255, 212, 144, 167),
+                    //       width: 2,
+                    //     ),
+                    //   ),
+                    //   child: Image.asset(
+                    //     'assets/images/parameter.png',
+                    //     height: 170,
+                    //     width: 120,
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
@@ -248,56 +184,66 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 
-  // Container buildClientList() {
-  //   return Container(
-  //       margin: const EdgeInsets.only(bottom: 8),
-  //       width: 350,
-  //       padding: const EdgeInsets.symmetric(horizontal: 25),
-  //       decoration: BoxDecoration(
-  //           color: const Color.fromARGB(255, 243, 236, 239),
-  //           borderRadius: BorderRadius.circular(15)),
-  //       child: Row(
-  //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //         children: [
-  //           Row(
-  //             children: [
-  //               Container(
-  //                 height: 90,
-  //                 width: 70,
-  //                 decoration: BoxDecoration(
-  //                   image: DecorationImage(
-  //                     image: AssetImage('assets/images/mainImage.png'),
-  //                     fit: BoxFit.cover,
-  //                   ),
-  //                   shape: BoxShape.circle,
-  //                 ),
-  //               ),
-  //               const SizedBox(
-  //                 width: 12,
-  //               ),
-  //               Column(
-  //                 mainAxisSize: MainAxisSize.min,
-  //                 crossAxisAlignment: CrossAxisAlignment.start,
-  //                 children: const [
-  //                   Text(
-  //                     "AMINE ELMANSOURI",
-  //                     style: TextStyle(
-  //                         fontSize: 20,
-  //                         fontWeight: FontWeight.bold,
-  //                         color: Colors.black),
-  //                   ),
-  //                   Text(
-  //                     "HOLA QUESTA",
-  //                     style: TextStyle(
-  //                         fontWeight: FontWeight.bold,
-  //                         fontSize: 12,
-  //                         color: Colors.black),
-  //                   ),
-  //                 ],
-  //               ),
-  //             ],
-  //           ),
-  //         ],
-  //       ));
-  // }
+  Container buildClientList() {
+    return Container(
+        margin: const EdgeInsets.only(bottom: 8),
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(horizontal: 25),
+        // decoration: BoxDecoration(
+        //     color: const Color.fromARGB(255, 243, 236, 239),
+        //     borderRadius: BorderRadius.circular(15)),
+        child: Row(
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Container(
+                  height: 90,
+                  width: 70,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/mainImage.png'),
+                      fit: BoxFit.cover,
+                    ),
+                    shape: BoxShape.circle,
+                  ),
+                ),
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 28),
+                      height: 35,
+                      width: 270,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFFFF9F7),
+                        border: Border.all(color: Color(0xFFFDDCD0)),
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(15),
+                          bottomRight: Radius.circular(15),
+                          topLeft: Radius.circular(-15),
+                          bottomLeft: Radius.circular(-15),
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            "AMINE ELMANSOURI",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ));
+  }
 }
