@@ -134,19 +134,22 @@ class _MessagerieState extends State<RechercheClientUI>
                     child: Expanded(
                         child: Column(
                       children: [
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Dernière Achats",
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Dernière Achats",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                            Icon(Icons.calendar_month),
-                          ],
+                              Icon(Icons.calendar_month),
+                            ],
+                          ),
                         ),
                         // SizedBox(
                         //   height: 2,
@@ -162,9 +165,9 @@ class _MessagerieState extends State<RechercheClientUI>
             ),
           ),
         ),
-        // SizedBox(
-        //   height: 2,
-        // ),
+        SizedBox(
+          height: 12,
+        ),
         DropdownButtonCSP(),
         SizedBox(
           height: 12,

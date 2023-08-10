@@ -119,8 +119,8 @@ class Bottom extends StatefulWidget {
 class _BottomState extends State<Bottom> {
   int index_color = 0;
   List<Widget> screen = [
-    RechercheClientUI(),
     Accueil(),
+    RechercheClientUI(),
     ListeClients(),
     NouvelleVente()
   ];

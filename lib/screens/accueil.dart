@@ -91,6 +91,7 @@ class _YearPickerScreenState extends State<Accueil> {
       body: ListView(
         children: [
           Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Container(
                 padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
@@ -647,7 +648,7 @@ class _YearPickerScreenState extends State<Accueil> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      "Chiffre D'affaires",
+                      "Bons d'achats",
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
@@ -670,19 +671,19 @@ class _YearPickerScreenState extends State<Accueil> {
                 height: 2,
               ),
               SizedBox(
-                height: 240, // Adjust the height of the SizedBox
+                height: 260, // Adjust the height of the SizedBox
                 width: 380, // Adjust the width of the SizedBox
                 child: Stack(
                   children: [
                     Center(
                       child: Container(
-                        height: 160, // Adjust the height of the Container
+                        height: 140, // Adjust the height of the Container
                         width: 390, // Adjust the width of the Container
                         decoration: BoxDecoration(
                           // gradient: const LinearGradient(
                           //   colors: [Colors.pink, Colors.purple],
                           // ),
-                          color: const Color.fromARGB(255, 244, 219, 227),
+                          color: const Color(0xFFFFF9F7),
                           borderRadius: BorderRadius.circular(18),
                         ),
                       ),
@@ -701,69 +702,41 @@ class _YearPickerScreenState extends State<Accueil> {
                           text: TextSpan(
                             children: [
                               TextSpan(
-                                text: "700 KDhs ",
+                                text: "          ",
+                                style: TextStyle(
+                                  color: Colors.green,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              TextSpan(
+                                text: "25 KDhs ",
                                 style: TextStyle(
                                   color: Color(0xFF880E4F),
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
                                 ),
                               ),
-                              TextSpan(
-                                text: "(+30KDhs)",
-                                style: TextStyle(
-                                  color: Colors.green,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
                             ],
                           ),
                         ),
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 250, 203, 218),
+                          color: Color(0xFFFFF4EF),
                           borderRadius: BorderRadius.circular(18),
                         ),
                       ),
                     ),
 
                     ///for percent indicator for gender
-                    Positioned(
-                      left: 30, // Adjust the position of the text
-                      top: 60, // Adjust the position of the text
-                      child: Container(
-                        height: 100,
-                        width: 350,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                        child: SfCartesianChart(
-                          primaryXAxis: CategoryAxis(),
 
-                          // legend: Legend(
-                          //   isVisible: true,
-                          // ),
-                          tooltipBehavior: TooltipBehavior(enable: true),
-                          series: <ChartSeries<SalesData, String>>[
-                            LineSeries<SalesData, String>(
-                              dataSource: data,
-                              xValueMapper: (SalesData sales, _) => sales.month,
-                              yValueMapper: (SalesData sales, _) => sales.sales,
-                              name: "Chiffre d'affaires",
-                              dataLabelSettings:
-                                  DataLabelSettings(isVisible: true),
-                              color: Colors.pink,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
                     Positioned(
                       left: 65, // Adjust the position of the text
-                      top: 155, // Adjust the position of the text
+                      top: 95, // Adjust the position of the text
                       child: Center(
                         child: RichText(
                           text: TextSpan(
                             children: [
                               TextSpan(
-                                text: "Services: ",
+                                text: "Nombre des bons d'achats: ",
                                 style: TextStyle(
                                   color: Color(0xFF880E4F),
                                   fontWeight: FontWeight.bold,
@@ -776,13 +749,13 @@ class _YearPickerScreenState extends State<Accueil> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              TextSpan(
-                                text: " (+50)",
-                                style: TextStyle(
-                                  color: Colors.green,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
+                              // TextSpan(
+                              //   text: " (+50)",
+                              //   style: TextStyle(
+                              //     color: Colors.green,
+                              //     fontWeight: FontWeight.bold,
+                              //   ),
+                              // ),
                             ],
                           ),
                         ),
@@ -791,13 +764,13 @@ class _YearPickerScreenState extends State<Accueil> {
 
                     Positioned(
                       left: 65, // Adjust the position of the text
-                      top: 175, // Adjust the position of the text
+                      top: 125, // Adjust the position of the text
                       child: Center(
                         child: RichText(
                           text: TextSpan(
                             children: [
                               TextSpan(
-                                text: "Produits: ",
+                                text: "Nombre des bons d'achats utilisés: ",
                                 style: TextStyle(
                                   color: Color(0xFF880E4F),
                                   fontWeight: FontWeight.bold,
@@ -810,10 +783,239 @@ class _YearPickerScreenState extends State<Accueil> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              //Messages
+              const SizedBox(
+                height: 5,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Messages",
+                      textAlign: TextAlign.left,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                          color: Color.fromARGB(255, 172, 70, 190)),
+                    ),
+                    Container(
+                      child: IconButton(
+                          icon: const Icon(
+                            Icons.money,
+                            color: Color.fromARGB(255, 148, 26, 79),
+                          ),
+                          onPressed: () {}),
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(
+                height: 2,
+              ),
+              SizedBox(
+                height: 260, // Adjust the height of the SizedBox
+                width: 380, // Adjust the width of the SizedBox
+                child: Stack(
+                  children: [
+                    Center(
+                      child: Container(
+                        height: 140, // Adjust the height of the Container
+                        width: 390, // Adjust the width of the Container
+                        decoration: BoxDecoration(
+                          // gradient: const LinearGradient(
+                          //   colors: [Colors.pink, Colors.purple],
+                          // ),
+                          color: const Color(0xFFFFF9F7),
+                          borderRadius: BorderRadius.circular(18),
+                        ),
+                      ),
+                    ),
+
+                    // use the positioned widget to place
+
+                    Positioned(
+                      bottom: 185, // Adjust the position of the container
+                      right: 90, // Adjust the position of the container
+                      child: Container(
+                        padding: EdgeInsets.symmetric(horizontal: 25),
+                        height: 30, // Adjust the height of the container
+                        width: 200, // Adjust the width of the container
+                        child: RichText(
+                          text: TextSpan(
+                            children: [
                               TextSpan(
-                                text: " (+175)",
+                                text: "          ",
                                 style: TextStyle(
                                   color: Colors.green,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              TextSpan(
+                                text: "2 KDhs ",
+                                style: TextStyle(
+                                  color: Color(0xFF880E4F),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        decoration: BoxDecoration(
+                          color: Color(0xFFFFF4EF),
+                          borderRadius: BorderRadius.circular(18),
+                        ),
+                      ),
+                    ),
+
+                    ///for percent indicator for gender
+
+                    Positioned(
+                      left: 65, // Adjust the position of the text
+                      top: 115, // Adjust the position of the text
+                      child: Center(
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.message,
+                              size: 20.0,
+                              color: Colors.blue,
+                            ),
+                            SizedBox(
+                              width: 2,
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: "Whatsapp : ",
+                                    style: TextStyle(
+                                      color: Color(0xFF880E4F),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text: "25000",
+                                    style: TextStyle(
+                                      color: Color(0xFF880E4F),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 235, // Adjust the position of the text
+                      top: 115, // Adjust the position of the text
+                      child: Center(
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.message,
+                              size: 20.0,
+                              color: Colors.blue,
+                            ),
+                            SizedBox(
+                              width: 2,
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: "Sms : ",
+                                    style: TextStyle(
+                                      color: Color(0xFF880E4F),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text: "3500",
+                                    style: TextStyle(
+                                      color: Color(0xFF880E4F),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 65, // Adjust the position of the text
+                      top: 150, // Adjust the position of the text
+                      child: Center(
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.message,
+                              size: 20.0,
+                              color: Colors.blue,
+                            ),
+                            SizedBox(
+                              width: 2,
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: "Email : ",
+                                    style: TextStyle(
+                                      color: Color(0xFF880E4F),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text: "2000",
+                                    style: TextStyle(
+                                      color: Color(0xFF880E4F),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    Positioned(
+                      left: 105, // Adjust the position of the text
+                      top: 85, // Adjust the position of the text
+                      child: Center(
+                        child: RichText(
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text: "Totale de messages : ",
+                                style: TextStyle(
+                                  color: Color(0xFF880E4F),
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              TextSpan(
+                                text: "4020",
+                                style: TextStyle(
+                                  color: Color(0xFF880E4F),
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
