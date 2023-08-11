@@ -95,6 +95,7 @@
 import 'package:flutter/material.dart';
 import 'package:wepos/screens/accueil.dart';
 import 'package:wepos/screens/ajouterClient.dart';
+import 'package:wepos/screens/begginingScreen.dart';
 import 'package:wepos/screens/choiceui.dart';
 import 'package:wepos/screens/detailclient.dart';
 import 'package:wepos/screens/listeClients.dart';
@@ -119,7 +120,7 @@ class Bottom extends StatefulWidget {
 class _BottomState extends State<Bottom> {
   int index_color = 0;
   List<Widget> screen = [
-    Accueil(),
+    BegginingScreen(),
     RechercheClientUI(),
     ListeClients(),
     NouvelleVente()
@@ -189,7 +190,7 @@ class _BottomState extends State<Bottom> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => AjouterClient(),
+                          builder: (context) => BegginingScreen(),
                         ),
                       );
                     },

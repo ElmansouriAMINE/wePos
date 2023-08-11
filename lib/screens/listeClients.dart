@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wepos/constants.dart';
+import 'package:wepos/screens/navigation_drawer.dart';
+
 import 'package:wepos/screens/splash/splash_screen.dart';
 
 class ListeClients extends StatefulWidget {
@@ -13,6 +14,7 @@ class _ListeClientsState extends State<ListeClients> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: MyNavigationDrawer(),
       backgroundColor: Color(0xFFF5F5F5),
       floatingActionButton: SizedBox(
         width: 70,
@@ -57,7 +59,15 @@ class _ListeClientsState extends State<ListeClients> {
                   children: [
                     Container(
                       child: IconButton(
-                          icon: const Icon(Icons.menu), onPressed: () {}),
+                          icon: const Icon(Icons.menu),
+                          onPressed: () {
+                            // Navigator.of(context).push(
+                            //   MaterialPageRoute(
+                            //     builder: (context) => MyNavigationDrawer(),
+                            //   ),
+                            // );
+                            Scaffold.of(context).openDrawer();
+                          }),
                     ),
                     Container(
                       child: Image.asset(
