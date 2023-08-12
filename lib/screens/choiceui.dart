@@ -95,6 +95,8 @@ class _choiceuiState extends State<choiceui> {
                                 "Produits",
                                 style: TextStyle(
                                     fontSize: 12,
+                                    fontFamily: 'LouisGeorgeCafe',
+                                    fontWeight: FontWeight.bold,
                                     color: isHoveredProduits
                                         ? Color(0xFFFFFFFF)
                                         : Color(0xFFCCB8A8)),
@@ -164,6 +166,8 @@ class _choiceuiState extends State<choiceui> {
                                 "Service",
                                 style: TextStyle(
                                     fontSize: 12,
+                                    fontFamily: 'LouisGeorgeCafe',
+                                    fontWeight: FontWeight.bold,
                                     color: isHoveredService
                                         ? Color(0xFFFFFFFF)
                                         : Color(0xFFCCB8A8)),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:wepos/screens/HoverButton.dart';
 import 'package:wepos/screens/mybutton.dart';
 
@@ -139,7 +140,10 @@ class _MessagerieState extends State<Messagerie>
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              MyButton(label: "Whatsapp", myicon: Icons.menu, onTap: () => {}),
+              MyButton(
+                  label: "Whatsapp",
+                  myicon: FontAwesomeIcons.whatsapp,
+                  onTap: () => {}),
               MyButton(
                   label: "SMS", myicon: Icons.phone_android, onTap: () => {}),
               MyButton(label: "Email", myicon: Icons.mail, onTap: () => {}),

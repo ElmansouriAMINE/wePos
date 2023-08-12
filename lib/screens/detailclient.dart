@@ -79,7 +79,8 @@ class DetailClient extends StatelessWidget {
                         textAlign: TextAlign.left,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontFamily: 'LouisGeorgeCafe',
+                          fontWeight: FontWeight.w900,
                           fontSize: 25,
                           color: Color(0xFF967195),
                         )),
@@ -131,6 +132,7 @@ class DetailClient extends StatelessWidget {
                                       text: "AMINE",
                                       style: TextStyle(
                                         color: Color(0xFF880E4F),
+                                        fontFamily: 'LouisGeorgeCafe',
                                         fontWeight: FontWeight.bold,
                                         fontSize: 20,
                                       ),
@@ -146,7 +148,8 @@ class DetailClient extends StatelessWidget {
                                       text: "ELMANSOURI",
                                       style: TextStyle(
                                         color: Color(0xFF880E4F),
-                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'LouisGeorgeCafe',
+                                        fontWeight: FontWeight.w900,
                                         fontSize: 20,
                                       ),
                                     ),
@@ -171,6 +174,7 @@ class DetailClient extends StatelessWidget {
                                         text: "jdjsdsjdjsjd dsjdsjdj",
                                         style: TextStyle(
                                           color: Color(0xFF880E4F),
+                                          fontFamily: 'LouisGeorgeCafe',
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
@@ -185,6 +189,7 @@ class DetailClient extends StatelessWidget {
                                         text: "ELMANSOURI",
                                         style: TextStyle(
                                           color: Color(0xFF880E4F),
+                                          fontFamily: 'LouisGeorgeCafe',
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
@@ -215,7 +220,8 @@ class DetailClient extends StatelessWidget {
                                           text: "+212 60000000",
                                           style: TextStyle(
                                             color: Color(0xFF880E4F),
-                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'LouisGeorgeCafe',
+                                            fontWeight: FontWeight.w900,
                                           ),
                                         ),
                                       ],
@@ -245,7 +251,8 @@ class DetailClient extends StatelessWidget {
                                           text: "LOLLLLLLLLLLLLLLLL",
                                           style: TextStyle(
                                             color: Color(0xFF880E4F),
-                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'LouisGeorgeCafe',
+                                            fontWeight: FontWeight.w900,
                                           ),
                                         ),
                                       ],
@@ -275,7 +282,8 @@ class DetailClient extends StatelessWidget {
                                           text: "A+",
                                           style: TextStyle(
                                             color: Color(0xFF880E4F),
-                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'LouisGeorgeCafe',
+                                            fontWeight: FontWeight.w900,
                                           ),
                                         ),
                                       ],
@@ -305,7 +313,8 @@ class DetailClient extends StatelessWidget {
                                           text: "CCCCCCCCCCCCCCCCCCC",
                                           style: TextStyle(
                                             color: Color(0xFF880E4F),
-                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'LouisGeorgeCafe',
+                                            fontWeight: FontWeight.w900,
                                           ),
                                         ),
                                       ],
@@ -353,7 +362,8 @@ class DetailClient extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                            fontFamily: 'LouisGeorgeCafe',
+                            fontWeight: FontWeight.w900,
                           ),
                         ),
                       ),
@@ -379,7 +389,8 @@ class DetailClient extends StatelessWidget {
                           style: TextStyle(
                             color: Color(0xFFBE9182),
                             fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                            fontFamily: 'LouisGeorgeCafe',
+                            fontWeight: FontWeight.w900,
                           ),
                         ),
                       ),

@@ -54,13 +54,15 @@ class _DashboardState extends State<Dashboard> {
                       "AMINE ELMANSOURI",
                       style: TextStyle(
                           fontSize: 20,
-                          fontWeight: FontWeight.bold,
+                          fontFamily: 'LouisGeorgeCafe',
+                          fontWeight: FontWeight.w900,
                           color: Colors.black),
                     ),
                     Text(
                       "HOLA QUESTA",
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontFamily: 'LouisGeorgeCafe',
+                          fontWeight: FontWeight.w900,
                           fontSize: 12,
                           color: Colors.black),
                     ),
@@ -166,7 +168,8 @@ class _DashboardState extends State<Dashboard> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontFamily: 'LouisGeorgeCafe',
+                          fontWeight: FontWeight.w900,
                           fontSize: 25,
                           color: Color.fromARGB(255, 172, 70, 190)),
                     ),

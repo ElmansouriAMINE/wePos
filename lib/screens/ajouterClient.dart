@@ -99,9 +99,10 @@ class _CreatProfileState extends State<AjouterClient> {
                           textAlign: TextAlign.left,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
-                              fontWeight: FontWeight.bold,
+                              fontFamily: 'LouisGeorgeCafe',
+                              fontWeight: FontWeight.w900,
                               fontSize: 25,
-                              color: Color.fromARGB(255, 172, 70, 190)),
+                              color: Color(0xFF967195)),
                         ),
                       ],
                     ),
@@ -170,7 +171,8 @@ class _CreatProfileState extends State<AjouterClient> {
                                           style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 18,
-                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'LouisGeorgeCafe',
+                                            fontWeight: FontWeight.w900,
                                           ),
                                         ),
                                 ),

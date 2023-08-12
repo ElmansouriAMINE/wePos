@@ -223,9 +223,10 @@ class _YearPickerScreenState extends State<Accueil> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontFamily: 'LouisGeorgeCafe',
+                          fontWeight: FontWeight.w900,
                           fontSize: 25,
-                          color: Color.fromARGB(255, 172, 70, 190)),
+                          color: Color(0xFF86044E)),
                     ),
                     Container(
                       child: IconButton(
@@ -242,14 +243,14 @@ class _YearPickerScreenState extends State<Accueil> {
                 height: 2,
               ),
               SizedBox(
-                height: 180, // Adjust the height of the SizedBox
-                width: 380, // Adjust the width of the SizedBox
+                height: 180,
+                width: 380,
                 child: Stack(
                   children: [
                     Center(
                       child: Container(
-                        height: 120, // Adjust the height of the Container
-                        width: 390, // Adjust the width of the Container
+                        height: 120,
+                        width: 390,
                         decoration: BoxDecoration(
                           // gradient: const LinearGradient(
                           //   colors: [Colors.pink, Colors.purple],
@@ -259,8 +260,6 @@ class _YearPickerScreenState extends State<Accueil> {
                         ),
                       ),
                     ),
-
-                    // use the positioned widget to place
 
                     Positioned(
                       bottom: 135, // Adjust the position of the container
@@ -309,6 +308,7 @@ class _YearPickerScreenState extends State<Accueil> {
                                 text: "Totale: ",
                                 style: TextStyle(
                                   color: Color(0xFF880E4F),
+                                  fontFamily: 'LouisGeorgeCafe',
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -336,6 +336,7 @@ class _YearPickerScreenState extends State<Accueil> {
                                 text: "Les nouveaux ",
                                 style: TextStyle(
                                   color: Color(0xFF880E4F),
+                                  fontFamily: 'LouisGeorgeCafe',
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -363,6 +364,7 @@ class _YearPickerScreenState extends State<Accueil> {
                                 text: "Femme: 730 ",
                                 style: TextStyle(
                                   color: Color(0xFF880E4F),
+                                  fontFamily: 'LouisGeorgeCafe',
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -390,6 +392,7 @@ class _YearPickerScreenState extends State<Accueil> {
                                 text: "Homme:112 ",
                                 style: TextStyle(
                                   color: Color(0xFF880E4F),
+                                  fontFamily: 'LouisGeorgeCafe',
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -462,9 +465,10 @@ class _YearPickerScreenState extends State<Accueil> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontFamily: 'LouisGeorgeCafe',
+                          fontWeight: FontWeight.w900,
                           fontSize: 25,
-                          color: Color.fromARGB(255, 172, 70, 190)),
+                          color: Color(0xFF86044E)),
                     ),
                     Container(
                       child: IconButton(
@@ -577,6 +581,7 @@ class _YearPickerScreenState extends State<Accueil> {
                                 text: "Services: ",
                                 style: TextStyle(
                                   color: Color(0xFF880E4F),
+                                  fontFamily: 'LouisGeorgeCafe',
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -611,6 +616,7 @@ class _YearPickerScreenState extends State<Accueil> {
                                 text: "Produits: ",
                                 style: TextStyle(
                                   color: Color(0xFF880E4F),
+                                  fontFamily: 'LouisGeorgeCafe',
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -652,9 +658,10 @@ class _YearPickerScreenState extends State<Accueil> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontFamily: 'LouisGeorgeCafe',
+                          fontWeight: FontWeight.w900,
                           fontSize: 25,
-                          color: Color.fromARGB(255, 172, 70, 190)),
+                          color: Color(0xFF86044E)),
                     ),
                     Container(
                       child: IconButton(
@@ -739,6 +746,7 @@ class _YearPickerScreenState extends State<Accueil> {
                                 text: "Nombre des bons d'achats: ",
                                 style: TextStyle(
                                   color: Color(0xFF880E4F),
+                                  fontFamily: 'LouisGeorgeCafe',
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -773,6 +781,7 @@ class _YearPickerScreenState extends State<Accueil> {
                                 text: "Nombre des bons d'achats utilisés: ",
                                 style: TextStyle(
                                   color: Color(0xFF880E4F),
+                                  fontFamily: 'LouisGeorgeCafe',
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -806,9 +815,10 @@ class _YearPickerScreenState extends State<Accueil> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
+                          fontFamily: 'LouisGeorgeCafe',
                           fontWeight: FontWeight.bold,
                           fontSize: 25,
-                          color: Color.fromARGB(255, 172, 70, 190)),
+                          color: Color(0xFF86044E)),
                     ),
                     Container(
                       child: IconButton(
@@ -904,6 +914,7 @@ class _YearPickerScreenState extends State<Accueil> {
                                     text: "Whatsapp : ",
                                     style: TextStyle(
                                       color: Color(0xFF880E4F),
+                                      fontFamily: 'LouisGeorgeCafe',
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -942,6 +953,7 @@ class _YearPickerScreenState extends State<Accueil> {
                                     text: "Sms : ",
                                     style: TextStyle(
                                       color: Color(0xFF880E4F),
+                                      fontFamily: 'LouisGeorgeCafe',
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -980,6 +992,7 @@ class _YearPickerScreenState extends State<Accueil> {
                                     text: "Email : ",
                                     style: TextStyle(
                                       color: Color(0xFF880E4F),
+                                      fontFamily: 'LouisGeorgeCafe',
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -1009,6 +1022,7 @@ class _YearPickerScreenState extends State<Accueil> {
                                 text: "Totale de messages : ",
                                 style: TextStyle(
                                   color: Color(0xFF880E4F),
+                                  fontFamily: 'LouisGeorgeCafe',
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),

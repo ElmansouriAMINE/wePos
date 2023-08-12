@@ -112,7 +112,9 @@ class _ListeClientsState extends State<ListeClients> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontFamily: 'LouisGeorgeCafe',
+                          fontWeight: FontWeight.w900,
+                          fontStyle: FontStyle.normal,
                           fontSize: 25,
                           color: Color.fromARGB(255, 172, 70, 190)),
                     ),
@@ -244,6 +246,7 @@ class _ListeClientsState extends State<ListeClients> {
                             style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
+                                fontFamily: 'LouisGeorgeCafe',
                                 color: Colors.black),
                           ),
                         ],

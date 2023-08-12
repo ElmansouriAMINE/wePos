@@ -348,6 +348,7 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:wepos/screens/accueil.dart';
 import 'package:wepos/screens/ajouterClient.dart';
 import 'package:wepos/screens/begginingScreen.dart';
@@ -377,8 +378,8 @@ class _BottomState extends State<Bottom> {
   List<Widget> screen = [
     BegginingScreen(),
     RechercheClientUI(),
-    ListeClients(),
-    NouvelleVente(),
+    Messagerie(),
+    AjouterClient(),
   ];
 
   @override
@@ -437,7 +438,7 @@ class _BottomState extends State<Bottom> {
                         });
                       },
                       child: Icon(
-                        Icons.people,
+                        Icons.person_add_alt,
                         size: 30,
                         color: index_color == 1
                             ? Color.fromRGBO(136, 14, 79, 1)
@@ -454,8 +455,8 @@ class _BottomState extends State<Bottom> {
                         });
                       },
                       child: Icon(
-                        Icons.shopping_bag,
-                        size: 30,
+                        FontAwesomeIcons.bagShopping,
+                        size: 25,
                         color: index_color == 2
                             ? Color.fromRGBO(136, 14, 79, 1)
                             : Colors.grey,
@@ -471,8 +472,8 @@ class _BottomState extends State<Bottom> {
                         });
                       },
                       child: Icon(
-                        Icons.mail,
-                        size: 30,
+                        FontAwesomeIcons.envelope,
+                        size: 25,
                         color: index_color == 3
                             ? Color.fromRGBO(136, 14, 79, 1)
                             : Colors.grey,
@@ -487,7 +488,7 @@ class _BottomState extends State<Bottom> {
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => BegginingScreen(),
+                        builder: (context) => SpalshScreen(),
                       ),
                     );
                   },
