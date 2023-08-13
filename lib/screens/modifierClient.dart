@@ -1,18 +1,15 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:wepos/screens/navigation_drawer.dart';
 
-class AjouterClient extends StatefulWidget {
-  const AjouterClient({super.key});
+class ModifierClient extends StatefulWidget {
+  const ModifierClient({super.key});
 
   @override
   _CreatProfileState createState() => _CreatProfileState();
 }
 
-class _CreatProfileState extends State<AjouterClient> {
-  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
+class _CreatProfileState extends State<ModifierClient> {
   bool circular = false;
   PickedFile? _imageFile;
   final _globalkey = GlobalKey<FormState>();
@@ -27,8 +24,6 @@ class _CreatProfileState extends State<AjouterClient> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
-      drawer: MyNavigationDrawer(),
       backgroundColor: Color(0xFFF5F5F5),
       body: Padding(
         padding: const EdgeInsets.only(
@@ -40,7 +35,48 @@ class _CreatProfileState extends State<AjouterClient> {
             children: [
               Column(
                 children: [
-                  MyNavBar(),
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                    alignment: Alignment.bottomCenter,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [Color(0xFFFACCBE), Color(0xFFFEE8DD)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      borderRadius:
+                          BorderRadius.vertical(bottom: Radius.circular(20)),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          child: IconButton(
+                              icon: const Icon(Icons.menu), onPressed: () {}),
+                        ),
+                        Container(
+                          child: Image.asset(
+                            'assets/images/wePos_logo.png',
+                            height: 170,
+                            width: 120,
+                          ),
+                        ),
+                        Container(
+                          height: 90,
+                          width: 70,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/mainImage.png'),
+                              fit: BoxFit.cover,
+                            ),
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   const SizedBox(
                     height: 10,
                   ),
@@ -59,7 +95,7 @@ class _CreatProfileState extends State<AjouterClient> {
                               onPressed: () {}),
                         ),
                         Text(
-                          '  Ajouter Client',
+                          '  Modifier Client (e)',
                           textAlign: TextAlign.left,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
@@ -526,53 +562,6 @@ class _CreatProfileState extends State<AjouterClient> {
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  Container MyNavBar() {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-      alignment: Alignment.bottomCenter,
-      height: 100,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Color(0xFFFACCBE), Color(0xFFFEE8DD)],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-        borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            child: IconButton(
-                icon: const Icon(Icons.menu),
-                onPressed: () {
-                  _scaffoldKey.currentState!.openDrawer();
-                }),
-          ),
-          Container(
-            child: Image.asset(
-              'assets/images/wePos_logo.png',
-              height: 170,
-              width: 120,
-            ),
-          ),
-          Container(
-            height: 90,
-            width: 70,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/mainImage.png'),
-                fit: BoxFit.cover,
-              ),
-              shape: BoxShape.circle,
-            ),
-          ),
-        ],
       ),
     );
   }

@@ -11,9 +11,12 @@ class ListeClients extends StatefulWidget {
 }
 
 class _ListeClientsState extends State<ListeClients> {
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       drawer: MyNavigationDrawer(),
       backgroundColor: Color(0xFFF5F5F5),
       floatingActionButton: SizedBox(
@@ -40,56 +43,7 @@ class _ListeClientsState extends State<ListeClients> {
         children: [
           Column(
             children: [
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                alignment: Alignment.bottomCenter,
-                height: 100,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Color(0xFFFACCBE), Color(0xFFFEE8DD)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  borderRadius:
-                      BorderRadius.vertical(bottom: Radius.circular(20)),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      child: IconButton(
-                          icon: const Icon(Icons.menu),
-                          onPressed: () {
-                            // Navigator.of(context).push(
-                            //   MaterialPageRoute(
-                            //     builder: (context) => MyNavigationDrawer(),
-                            //   ),
-                            // );
-                            Scaffold.of(context).openDrawer();
-                          }),
-                    ),
-                    Container(
-                      child: Image.asset(
-                        'assets/images/wePos_logo.png',
-                        height: 170,
-                        width: 120,
-                      ),
-                    ),
-                    Container(
-                      height: 90,
-                      width: 70,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/mainImage.png'),
-                          fit: BoxFit.cover,
-                        ),
-                        shape: BoxShape.circle,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              MyNavBar(),
               const SizedBox(
                 height: 25,
               ),
@@ -190,6 +144,53 @@ class _ListeClientsState extends State<ListeClients> {
               buildClientList(),
               buildClientList(),
             ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Container MyNavBar() {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+      alignment: Alignment.bottomCenter,
+      height: 100,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Color(0xFFFACCBE), Color(0xFFFEE8DD)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            child: IconButton(
+                icon: const Icon(Icons.menu),
+                onPressed: () {
+                  _scaffoldKey.currentState!.openDrawer();
+                }),
+          ),
+          Container(
+            child: Image.asset(
+              'assets/images/wePos_logo.png',
+              height: 170,
+              width: 120,
+            ),
+          ),
+          Container(
+            height: 90,
+            width: 70,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/mainImage.png'),
+                fit: BoxFit.cover,
+              ),
+              shape: BoxShape.circle,
+            ),
           ),
         ],
       ),

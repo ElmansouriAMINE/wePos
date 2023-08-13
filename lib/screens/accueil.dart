@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:wepos/screens/navigation_drawer.dart';
 
 class Accueil extends StatefulWidget {
   const Accueil({super.key});
@@ -10,6 +12,8 @@ class Accueil extends StatefulWidget {
 }
 
 class _YearPickerScreenState extends State<Accueil> {
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   String showYear = 'Select Year';
   String showMonth = 'Select Month';
   DateTime _selectedYear = DateTime.now();
@@ -87,54 +91,57 @@ class _YearPickerScreenState extends State<Accueil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: MyNavigationDrawer(),
       backgroundColor: Color(0xFFF5F5F5),
       body: ListView(
         children: [
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                alignment: Alignment.bottomCenter,
-                height: 100,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Color(0xFFFACCBE), Color(0xFFFEE8DD)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  borderRadius:
-                      BorderRadius.vertical(bottom: Radius.circular(20)),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      child: IconButton(
-                          icon: const Icon(Icons.menu), onPressed: () {}),
-                    ),
-                    Container(
-                      child: Image.asset(
-                        'assets/images/wePos_logo.png',
-                        height: 170,
-                        width: 120,
-                      ),
-                    ),
-                    Container(
-                      height: 90,
-                      width: 70,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/mainImage.png'),
-                          fit: BoxFit.cover,
-                        ),
-                        shape: BoxShape.circle,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              // Container(
+              //   padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+              //   alignment: Alignment.bottomCenter,
+              //   height: 100,
+              //   decoration: BoxDecoration(
+              //     gradient: LinearGradient(
+              //       colors: [Color(0xFFFACCBE), Color(0xFFFEE8DD)],
+              //       begin: Alignment.topLeft,
+              //       end: Alignment.bottomRight,
+              //     ),
+              //     borderRadius:
+              //         BorderRadius.vertical(bottom: Radius.circular(20)),
+              //   ),
+              //   child: Row(
+              //     crossAxisAlignment: CrossAxisAlignment.center,
+              //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //     children: [
+              //       Container(
+              //         child: IconButton(
+              //             icon: const Icon(Icons.menu), onPressed: () {}),
+              //       ),
+              //       Container(
+              //         child: Image.asset(
+              //           'assets/images/wePos_logo.png',
+              //           height: 170,
+              //           width: 120,
+              //         ),
+              //       ),
+              //       Container(
+              //         height: 90,
+              //         width: 70,
+              //         decoration: BoxDecoration(
+              //           image: DecorationImage(
+              //             image: AssetImage('assets/images/mainImage.png'),
+              //             fit: BoxFit.cover,
+              //           ),
+              //           shape: BoxShape.circle,
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
+              MyNavBar(),
               const SizedBox(
                 height: 15,
               ),
@@ -900,9 +907,9 @@ class _YearPickerScreenState extends State<Accueil> {
                         child: Row(
                           children: [
                             Icon(
-                              Icons.message,
+                              FontAwesomeIcons.whatsapp,
                               size: 20.0,
-                              color: Colors.blue,
+                              color: Color(0xFF86044E),
                             ),
                             SizedBox(
                               width: 2,
@@ -939,12 +946,12 @@ class _YearPickerScreenState extends State<Accueil> {
                         child: Row(
                           children: [
                             Icon(
-                              Icons.message,
+                              FontAwesomeIcons.comments,
                               size: 20.0,
-                              color: Colors.blue,
+                              color: Color(0xFF86044E),
                             ),
                             SizedBox(
-                              width: 2,
+                              width: 10,
                             ),
                             RichText(
                               text: TextSpan(
@@ -978,12 +985,12 @@ class _YearPickerScreenState extends State<Accueil> {
                         child: Row(
                           children: [
                             Icon(
-                              Icons.message,
+                              FontAwesomeIcons.envelope,
                               size: 20.0,
-                              color: Colors.blue,
+                              color: Color(0xFF86044E),
                             ),
                             SizedBox(
-                              width: 2,
+                              width: 4,
                             ),
                             RichText(
                               text: TextSpan(
@@ -1042,6 +1049,53 @@ class _YearPickerScreenState extends State<Accueil> {
                 ),
               ),
             ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Container MyNavBar() {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+      alignment: Alignment.bottomCenter,
+      height: 100,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Color(0xFFFACCBE), Color(0xFFFEE8DD)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            child: IconButton(
+                icon: const Icon(Icons.menu),
+                onPressed: () {
+                  _scaffoldKey.currentState!.openDrawer();
+                }),
+          ),
+          Container(
+            child: Image.asset(
+              'assets/images/wePos_logo.png',
+              height: 170,
+              width: 120,
+            ),
+          ),
+          Container(
+            height: 90,
+            width: 70,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/mainImage.png'),
+                fit: BoxFit.cover,
+              ),
+              shape: BoxShape.circle,
+            ),
           ),
         ],
       ),

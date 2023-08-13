@@ -115,8 +115,7 @@ class MyNavigationDrawer extends StatelessWidget {
                               children: [
                                 circularImageContainer(
                                   onTap: () {},
-                                  image: AssetImage(
-                                      'assets/images/produit_logo.png'),
+                                  image: AssetImage('assets/images/logo1.png'),
                                   containerColor: Colors.white,
                                   borderColor: Color(0xFFBE9182),
                                   imageColor: Color(0xFF988678),
@@ -125,8 +124,7 @@ class MyNavigationDrawer extends StatelessWidget {
                                 ),
                                 circularImageContainer(
                                   onTap: () {},
-                                  image: AssetImage(
-                                      'assets/images/produit_logo.png'),
+                                  image: AssetImage('assets/images/logo2.png'),
                                   containerColor: Colors.white,
                                   borderColor: Color(0xFFBE9182),
                                   imageColor: Color(0xFF988678),
@@ -135,8 +133,7 @@ class MyNavigationDrawer extends StatelessWidget {
                                 ),
                                 circularImageContainer(
                                   onTap: () {},
-                                  image: AssetImage(
-                                      'assets/images/produit_logo.png'),
+                                  image: AssetImage('assets/images/logo3.png'),
                                   containerColor: Colors.white,
                                   borderColor: Color(0xFFBE9182),
                                   imageColor: Color(0xFF988678),
@@ -145,8 +142,7 @@ class MyNavigationDrawer extends StatelessWidget {
                                 ),
                                 circularImageContainer(
                                   onTap: () {},
-                                  image: AssetImage(
-                                      'assets/images/produit_logo.png'),
+                                  image: AssetImage('assets/images/logo4.png'),
                                   containerColor: Colors.white,
                                   borderColor: Color(0xFFBE9182),
                                   imageColor: Color(0xFF988678),

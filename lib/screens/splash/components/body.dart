@@ -183,10 +183,67 @@ class _BodyState extends State<Body> {
                     children: [
                       Transform.scale(
                         scale: 1.4,
-                        child: Image.asset(
-                          'assets/images/circle.png',
-                          height: 582.86,
-                          width: double.infinity,
+                        child: Opacity(
+                          opacity: 0.3,
+                          child: Image.asset(
+                            'assets/images/circle.png',
+                            height: 582.86,
+                            width: double.infinity,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 360,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: List.generate(
+                                3,
+                                (index) => buildDot(index == _currentPage),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 34,
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(top: 3, left: 3),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              child: MaterialButton(
+                                minWidth: 100,
+                                height: 45,
+                                onPressed: () {
+                                  if (_currentPage < 2) {
+                                    setState(() {
+                                      _currentPage++;
+                                    });
+                                    _pageController.animateToPage(
+                                      _currentPage,
+                                      duration: Duration(milliseconds: 300),
+                                      curve: Curves.easeInOut,
+                                    );
+                                  }
+                                },
+                                color: Color.fromARGB(255, 142, 20, 67),
+                                elevation: 0,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(50)),
+                                child: Text(
+                                  "Next",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 18,
+                                      color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       Positioned.fill(
@@ -213,14 +270,16 @@ class _BodyState extends State<Body> {
                           ],
                         ),
                       ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.center,
+                      //   crossAxisAlignment: CrossAxisAlignment.end,
+                      //   children: List.generate(
+                      //     3,
+                      //     (index) => buildDot(index == _currentPage),
+                      //   ),
+                      // ),
+                      // Spacer(),
                     ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                      3,
-                      (index) => buildDot(index == _currentPage),
-                    ),
                   ),
                   Spacer(),
                 ],

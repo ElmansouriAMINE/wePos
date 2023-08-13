@@ -349,6 +349,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:wepos/screens/ChoisirClient.dart';
 import 'package:wepos/screens/accueil.dart';
 import 'package:wepos/screens/ajouterClient.dart';
 import 'package:wepos/screens/begginingScreen.dart';
@@ -376,10 +377,10 @@ class Bottom extends StatefulWidget {
 class _BottomState extends State<Bottom> {
   int index_color = 0;
   List<Widget> screen = [
-    BegginingScreen(),
+    ListeClients(),
     RechercheClientUI(),
     Messagerie(),
-    AjouterClient(),
+    DetailClient(),
   ];
 
   @override
