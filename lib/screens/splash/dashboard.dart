@@ -80,23 +80,26 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      floatingActionButton: SizedBox(
-        width: 70,
-        height: 70,
-        child: FloatingActionButton(
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => SpalshScreen()),
-            );
-          },
-          child: Icon(
-            Icons.person_add_alt_1_outlined,
-            size: 42,
-            color: const Color(0xFF718696),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 68.0),
+        child: SizedBox(
+          width: 70,
+          height: 70,
+          child: FloatingActionButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => SpalshScreen()),
+              );
+            },
+            child: Icon(
+              Icons.person_add_alt_1_outlined,
+              size: 32,
+              color: const Color(0xFF718696),
+            ),
+            backgroundColor: Colors.white,
+            foregroundColor: Color(0xFFFEEFE8),
+            shape: CircleBorder(),
           ),
-          backgroundColor: Colors.white,
-          foregroundColor: Color(0xFFFEEFE8),
-          shape: CircleBorder(),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,

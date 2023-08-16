@@ -77,8 +77,9 @@ class _UserProfileState extends State<UserProfile> {
                         Expanded(
                           child: TextFormField(
                             decoration: InputDecoration(
-                                hintText: "civilité",
-                                hintStyle: TextStyle(color: Color(0xFF86044E)),
+                                hintText: "Civilité",
+                                hintStyle: TextStyle(
+                                    color: Color(0xFF86044E), fontSize: 18),
                                 fillColor: Color(0xFF86044E),
                                 enabled: false),
                             validator: (value) {
@@ -110,7 +111,14 @@ class _UserProfileState extends State<UserProfile> {
                                 side: BorderSide(color: Colors.black),
                               ),
                             ),
-                            Text("Mr"),
+                            Text(
+                              "Mr",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w900,
+                                  fontFamily: 'LouisGeorgeCafe',
+                                  color: Color(0xFFC9C9C9)),
+                            ),
                           ],
                         ),
                         SizedBox(
@@ -132,7 +140,14 @@ class _UserProfileState extends State<UserProfile> {
                                 side: BorderSide(color: Colors.black),
                               ),
                             ),
-                            Text("Mme"),
+                            Text(
+                              "Mme",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w900,
+                                  fontFamily: 'LouisGeorgeCafe',
+                                  color: Color(0xFFC9C9C9)),
+                            ),
                           ],
                         ),
                       ],
@@ -279,7 +294,11 @@ class _UserProfileState extends State<UserProfile> {
                           child: Text(
                             "J'accepte les conditions d'utilisation et la politique de confidentialité",
                             textAlign: TextAlign.start,
-                            style: TextStyle(fontSize: 16),
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w900,
+                                fontFamily: 'LouisGeorgeCafe',
+                                color: Color(0xFFA5A5A5)),
                           ),
                         ),
                       ],
@@ -306,6 +325,9 @@ class _UserProfileState extends State<UserProfile> {
                               color: Colors.white),
                         ),
                       ),
+                    ),
+                    SizedBox(
+                      height: 40,
                     ),
                   ],
                 ),

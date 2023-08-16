@@ -103,7 +103,7 @@ class _MessagerieState extends State<RechercheClientUI>
           height: 20,
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+          padding: const EdgeInsets.only(left: 19.0, right: 19.0),
           child: SizedBox(
             child: Stack(
               children: [
@@ -135,7 +135,8 @@ class _MessagerieState extends State<RechercheClientUI>
                         child: Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.only(
+                              right: 22.0, left: 22.0, top: 10.0, bottom: 10.0),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -143,11 +144,22 @@ class _MessagerieState extends State<RechercheClientUI>
                               Text(
                                 "Dernière Achats",
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  color: Color(0xFF718696),
+                                  fontFamily: 'LouisGeorgeCafe',
+                                  fontSize: 15,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              Icon(Icons.calendar_month),
+                              // Icon(
+                              //   Icons.calendar_month,
+                              //   color: Color(0xFF718696),
+                              // ),
+                              Transform.scale(
+                                scale: 1.2,
+                                child: Image.asset(
+                                    'assets/images/calendrier.png',
+                                    color: Color(0xFF718696)),
+                              ),
                             ],
                           ),
                         ),
@@ -215,10 +227,17 @@ class _MessagerieState extends State<RechercheClientUI>
                               "Nom,Prénom",
                               style: TextStyle(
                                 fontSize: 18,
+                                color: Color(0xFF718696),
+                                fontFamily: 'LouisGeorgeCafe',
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Icon(Icons.create),
+                            // Icon(Icons.create),
+                            Transform.scale(
+                              scale: 1.3,
+                              child: Image.asset('assets/images/pen-line.png',
+                                  color: Color(0xFF718696)),
+                            ),
                           ],
                         ),
                         SizedBox(
@@ -349,6 +368,11 @@ class _MessagerieState extends State<RechercheClientUI>
             enabledBorder: InputBorder.none,
             focusedBorder: InputBorder.none,
             hintText: "Produits",
+            hintStyle: TextStyle(
+                color: Color(0xFF718696),
+                fontFamily: 'LouisGeorgeCafe',
+                fontSize: 15,
+                fontWeight: FontWeight.bold),
             contentPadding: EdgeInsets.symmetric(
               horizontal: 10,
               vertical: 10,
@@ -384,6 +408,11 @@ class _MessagerieState extends State<RechercheClientUI>
             enabledBorder: InputBorder.none,
             focusedBorder: InputBorder.none,
             hintText: "Services",
+            hintStyle: TextStyle(
+                color: Color(0xFF718696),
+                fontFamily: 'LouisGeorgeCafe',
+                fontSize: 15,
+                fontWeight: FontWeight.bold),
             contentPadding: EdgeInsets.symmetric(
               horizontal: 10,
               vertical: 10,
@@ -442,7 +471,15 @@ class _DropdownButtonExampleState extends State<DropdownButtonCSP> {
                   items: list.map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
-                      child: Text(value),
+                      child: Text(
+                        value,
+                        style: TextStyle(
+                          color: Color(0xFF718696),
+                          fontFamily: 'LouisGeorgeCafe',
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     );
                   }).toList(),
                 ),
@@ -450,7 +487,12 @@ class _DropdownButtonExampleState extends State<DropdownButtonCSP> {
             ),
             InkWell(
               onTap: () {},
-              child: Icon(Icons.arrow_downward),
+              child:
+                  // Icon(Icons.arrow_downward)
+                  Image.asset(
+                'assets/images/arrow.png',
+                color: Color(0xFF718696),
+              ),
             ),
           ],
         ),
@@ -511,7 +553,15 @@ class _DropdownButtonVilleState extends State<DropdownButtonVille> {
                   items: list.map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
-                      child: Text(value),
+                      child: Text(
+                        value,
+                        style: TextStyle(
+                          color: Color(0xFF718696),
+                          fontFamily: 'LouisGeorgeCafe',
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     );
                   }).toList(),
                 ),
@@ -519,7 +569,8 @@ class _DropdownButtonVilleState extends State<DropdownButtonVille> {
             ),
             InkWell(
               onTap: () {},
-              child: Icon(Icons.arrow_downward),
+              child: Image.asset('assets/images/arrow.png',
+                  color: Color(0xFF718696)),
             ),
           ],
         ),

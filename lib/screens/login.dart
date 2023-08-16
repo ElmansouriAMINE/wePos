@@ -8,22 +8,22 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back_ios,
-            size: 20,
-            color: Colors.black,
-          ),
-        ),
-        systemOverlayStyle: SystemUiOverlayStyle.dark,
-      ),
+      backgroundColor: Color(0xFFF5F5F5),
+      // appBar: AppBar(
+      //   elevation: 0,
+      //   backgroundColor: Colors.white,
+      //   leading: IconButton(
+      //     onPressed: () {
+      //       Navigator.pop(context);
+      //     },
+      //     icon: Icon(
+      //       Icons.arrow_back_ios,
+      //       size: 20,
+      //       color: Colors.black,
+      //     ),
+      //   ),
+      //   systemOverlayStyle: SystemUiOverlayStyle.dark,
+      // ),
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: double.infinity,
@@ -38,12 +38,16 @@ class LoginPage extends StatelessWidget {
                     children: <Widget>[
                       FadeAnimation(
                         1,
-                        Container(
-                          height: 130,
-                          width: 120,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/wePos_logo.png'),
+                        Transform.scale(
+                          scale: 2,
+                          child: Container(
+                            height: 130,
+                            width: 120,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image:
+                                    AssetImage('assets/images/wePos_logo.png'),
+                              ),
                             ),
                           ),
                         ),
@@ -56,7 +60,10 @@ class LoginPage extends StatelessWidget {
                           Text(
                             "Connectez-vous",
                             style: TextStyle(
-                                fontSize: 35, color: Colors.grey[700]),
+                                fontSize: 31,
+                                fontWeight: FontWeight.w700,
+                                fontFamily: 'LouisGeorgeCafe',
+                                color: Color(0xFF718696)),
                           )),
                     ],
                   ),
@@ -107,20 +114,21 @@ class LoginPage extends StatelessWidget {
                   FadeAnimation(
                       1.4,
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 40),
+                        padding: EdgeInsets.symmetric(horizontal: 100),
                         child: Container(
                           padding: EdgeInsets.only(top: 3, left: 3),
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50),
-                              border: Border(
-                                bottom: BorderSide(color: Colors.black),
-                                top: BorderSide(color: Colors.black),
-                                left: BorderSide(color: Colors.black),
-                                right: BorderSide(color: Colors.black),
-                              )),
+                            borderRadius: BorderRadius.circular(50),
+                            // border: Border(
+                            //   bottom: BorderSide(color: Colors.black),
+                            //   top: BorderSide(color: Colors.black),
+                            //   left: BorderSide(color: Colors.black),
+                            //   right: BorderSide(color: Colors.black),
+                            // )
+                          ),
                           child: MaterialButton(
                             minWidth: double.infinity,
-                            height: 60,
+                            height: 50,
                             onPressed: () {},
                             color: Color.fromARGB(255, 142, 20, 67),
                             elevation: 0,
@@ -179,17 +187,38 @@ class LoginPage extends StatelessWidget {
         SizedBox(
           height: 5,
         ),
-        TextField(
-          obscureText: obscureText,
-          decoration: InputDecoration(
-            hintText: hintText,
-            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(color: Colors.grey)),
-            border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(color: Colors.grey)),
+        Container(
+          height: 45,
+          width: 250,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(15),
+            border: Border.all(
+              color: const Color.fromARGB(255, 212, 144, 167),
+              width: 2,
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: TextField(
+              obscureText: obscureText,
+              decoration: InputDecoration(
+                hintText: hintText,
+                hintStyle: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w100,
+                    fontFamily: 'LouisGeorgeCafe',
+                    color: Color(0xFF718696)),
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                // enabledBorder: OutlineInputBorder(
+                //     borderRadius: BorderRadius.circular(10),
+                //     borderSide: BorderSide(color: Colors.grey)),
+                // border: OutlineInputBorder(
+                //     borderRadius: BorderRadius.circular(10),
+                //     borderSide: BorderSide(color: Colors.grey)),
+              ),
+            ),
           ),
         ),
         SizedBox(

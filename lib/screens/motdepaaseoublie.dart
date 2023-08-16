@@ -8,22 +8,22 @@ class MotDePasseOublie extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(
-            Icons.arrow_back_ios,
-            size: 20,
-            color: Colors.black,
-          ),
-        ),
-        systemOverlayStyle: SystemUiOverlayStyle.dark,
-      ),
+      backgroundColor: Color(0xFFF5F5F5),
+      // appBar: AppBar(
+      //   elevation: 0,
+      //   backgroundColor: Colors.white,
+      //   leading: IconButton(
+      //     onPressed: () {
+      //       Navigator.pop(context);
+      //     },
+      //     icon: Icon(
+      //       Icons.arrow_back_ios,
+      //       size: 20,
+      //       color: Colors.black,
+      //     ),
+      //   ),
+      //   systemOverlayStyle: SystemUiOverlayStyle.dark,
+      // ),
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: double.infinity,
@@ -55,48 +55,53 @@ class MotDePasseOublie extends StatelessWidget {
                           Text(
                             "Mot de passe oublie ?",
                             style: TextStyle(
-                                fontSize: 25, color: Colors.grey[700]),
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'LouisGeorgeCafe',
+                                color: Color(0xFF718696)),
                           )),
                       SizedBox(
-                        height: 10,
+                        height: 40,
                       ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 40),
-                        child: Column(
-                          children: <Widget>[
-                            FadeAnimation(
-                                1.2, makeInput(label: "", hintText: "Email")),
-                          ],
-                        ),
-                      ),
+                      // Padding(
+                      //   padding: EdgeInsets.symmetric(horizontal: 40),
+                      //   child: Column(
+                      //     children: <Widget>[
+                      //       FadeAnimation(
+                      //           1.2, makeInput(label: "", hintText: "Email")),
+                      //     ],
+                      //   ),
+                      // ),
+                      nameTextField(),
                       SizedBox(
                         height: 35,
                       ),
                       FadeAnimation(
                           1.4,
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 80),
+                            padding: EdgeInsets.symmetric(horizontal: 100),
                             child: Container(
                               padding: EdgeInsets.only(top: 3, left: 3),
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50),
-                                  border: Border(
-                                    bottom: BorderSide(
-                                        color:
-                                            Color.fromARGB(255, 142, 20, 67)),
-                                    top: BorderSide(
-                                        color:
-                                            Color.fromARGB(255, 142, 20, 67)),
-                                    left: BorderSide(
-                                        color:
-                                            Color.fromARGB(255, 142, 20, 67)),
-                                    right: BorderSide(
-                                        color:
-                                            Color.fromARGB(255, 142, 20, 67)),
-                                  )),
+                                borderRadius: BorderRadius.circular(50),
+                                // border: Border(
+                                //   bottom: BorderSide(
+                                //       color:
+                                //           Color.fromARGB(255, 142, 20, 67)),
+                                //   top: BorderSide(
+                                //       color:
+                                //           Color.fromARGB(255, 142, 20, 67)),
+                                //   left: BorderSide(
+                                //       color:
+                                //           Color.fromARGB(255, 142, 20, 67)),
+                                //   right: BorderSide(
+                                //       color:
+                                //           Color.fromARGB(255, 142, 20, 67)),
+                                // )
+                              ),
                               child: MaterialButton(
                                 minWidth: double.infinity,
-                                height: 60,
+                                height: 45,
                                 onPressed: () {
                                   Navigator.push(
                                     context,
@@ -184,4 +189,43 @@ class MotDePasseOublie extends StatelessWidget {
       ],
     );
   }
+}
+
+Widget nameTextField() {
+  return Container(
+    height: 45,
+    width: 300,
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(15),
+      border: Border.all(
+        color: const Color.fromARGB(255, 212, 144, 167),
+        width: 2,
+      ),
+    ),
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: TextFormField(
+        validator: (value) {
+          if (value!.isEmpty) return "Name can't be empty";
+
+          return null;
+        },
+        decoration: InputDecoration(
+          enabledBorder: InputBorder.none,
+          focusedBorder: InputBorder.none,
+          hintText: "Email",
+          hintStyle: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'LouisGeorgeCafe',
+              color: Color(0xFF718696)),
+          contentPadding: EdgeInsets.symmetric(
+            horizontal: 10,
+            vertical: 15,
+          ),
+        ),
+      ),
+    ),
+  );
 }
