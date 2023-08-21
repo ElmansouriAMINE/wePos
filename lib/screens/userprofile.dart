@@ -327,7 +327,7 @@ class _UserProfileState extends State<UserProfile> {
                       ),
                     ),
                     SizedBox(
-                      height: 40,
+                      height: 70,
                     ),
                   ],
                 ),
