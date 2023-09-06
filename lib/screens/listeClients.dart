@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wepos/constants.dart';
+import 'package:wepos/screens/ajouterClient.dart';
 import 'package:wepos/screens/navigation_drawer.dart';
 
 import 'package:wepos/screens/splash/splash_screen.dart';
@@ -29,7 +30,7 @@ class _ListeClientsState extends State<ListeClients> {
           child: FloatingActionButton(
             onPressed: () {
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => SpalshScreen()),
+                MaterialPageRoute(builder: (context) => AjouterClient()),
               );
             },
             child: Icon(
