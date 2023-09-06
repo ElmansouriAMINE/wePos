@@ -149,6 +149,9 @@ class _ListeClientsState extends State<ListeClients> {
               buildClientList("ISAAC LOUIS", "assets/images/mainImage.png"),
               buildClientList("LILE LOUIS", "assets/images/mainImage.png"),
               buildClientList("TOM LOUIS", "assets/images/mainImage.png"),
+              const SizedBox(
+                height: 45,
+              ),
             ],
           ),
         ],
