@@ -36,7 +36,7 @@ class _HoverButtonState extends State<MyButton> {
       },
       child: Container(
         width: 120,
-        padding: EdgeInsets.all(12),
+        padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: _isHovered ? Color(0xFF86044E) : KMainColor,
           borderRadius: BorderRadius.circular(50),

@@ -120,8 +120,8 @@ class _MessagerieState extends State<Messagerie>
               children: [
                 Center(
                   child: Container(
-                    height: 160, // Adjust the height of the Container
-                    width: 390, // Adjust the width of the Container
+                    height: 160,
+                    width: 390,
                     decoration: BoxDecoration(
                       // gradient: const LinearGradient(
                       //   colors: [Colors.pink, Colors.purple],
@@ -131,11 +131,6 @@ class _MessagerieState extends State<Messagerie>
                     ),
                   ),
                 ),
-
-                // use the positioned widget to place
-
-                ///for percent indicator for gender
-
                 Positioned(
                   child: Center(
                     child: Expanded(

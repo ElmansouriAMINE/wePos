@@ -393,6 +393,7 @@ class _BottomState extends State<Bottom> {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100),
         child: WePosAppBar(scaffoldKey: _scaffoldKey), // Pass the scaffoldKey

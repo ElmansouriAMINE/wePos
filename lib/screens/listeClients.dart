@@ -17,6 +17,7 @@ class _ListeClientsState extends State<ListeClients> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       // key: _scaffoldKey,
       // drawer: MyNavigationDrawer(),
       backgroundColor: Color(0xFFF5F5F5),
