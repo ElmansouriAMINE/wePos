@@ -18,15 +18,18 @@ class _BegginingScreenState extends State<BegginingScreen> {
             decoration: BoxDecoration(color: Color(0xFFF5F5F5)),
           ),
         ),
-        Container(
-          height: 700,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/images/wePos_large_ic.png'),
-                fit: BoxFit.cover,
-                alignment: Alignment.center),
+        GestureDetector(
+          child: Container(
+            height: 700,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/images/wePos_large_ic.png'),
+                  fit: BoxFit.cover,
+                  alignment: Alignment.center),
+            ),
           ),
+          onDoubleTap: () => Navigator.pushNamed(context, '/second'),
         ),
       ],
     );

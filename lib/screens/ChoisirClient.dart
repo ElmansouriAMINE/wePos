@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wepos/constants.dart';
 import 'package:wepos/screens/splash/splash_screen.dart';
 
 class ChoisirClient extends StatefulWidget {
@@ -46,11 +47,11 @@ class _ChoisirClientState extends State<ChoisirClient> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                          fontFamily: 'LouisGeorgeCafe',
+                          fontFamily: wePosfontFamily,
                           fontWeight: FontWeight.w900,
                           fontStyle: FontStyle.normal,
                           fontSize: 25,
-                          color: Color(0xFF967195)),
+                          color: kUIName),
                     ),
                   ],
                 ),
@@ -131,7 +132,7 @@ class _ChoisirClientState extends State<ChoisirClient> {
                   Text(
                     "Sélection toute",
                     style: TextStyle(
-                      fontFamily: 'LouisGeorgeCafe',
+                      fontFamily: wePosfontFamily,
                       fontWeight: FontWeight.w800,
                       fontSize: 20,
                       color: Color(0xFF718696),
@@ -139,10 +140,10 @@ class _ChoisirClientState extends State<ChoisirClient> {
                   )
                 ],
               ),
-              buildClientList(),
-              buildClientList(),
-              buildClientList(),
-              buildClientList(),
+              buildClientList("client 1", 'assets/images/mainImage.png'),
+              buildClientList("client 2", 'assets/images/mainImage.png'),
+              buildClientList("client 3", 'assets/images/mainImage.png'),
+              buildClientList("client 4", 'assets/images/mainImage.png'),
 
               SizedBox(
                 height: 20,
@@ -169,7 +170,7 @@ class _ChoisirClientState extends State<ChoisirClient> {
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
-                                fontFamily: 'LouisGeorgeCafe',
+                                fontFamily: wePosfontFamily,
                                 fontWeight: FontWeight.w900,
                               ),
                             ),
@@ -187,7 +188,7 @@ class _ChoisirClientState extends State<ChoisirClient> {
     );
   }
 
-  Container buildClientList() {
+  Container buildClientList(String nom, String imageUrl) {
     return Container(
         margin: const EdgeInsets.only(bottom: 8),
         width: double.infinity,
@@ -214,7 +215,7 @@ class _ChoisirClientState extends State<ChoisirClient> {
                   width: 70,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images/mainImage.png'),
+                      image: AssetImage(imageUrl),
                       fit: BoxFit.cover,
                     ),
                     shape: BoxShape.circle,
@@ -229,8 +230,8 @@ class _ChoisirClientState extends State<ChoisirClient> {
                       height: 35,
                       width: 270,
                       decoration: BoxDecoration(
-                        color: Color(0xFFFFF9F7),
-                        border: Border.all(color: Color(0xFFFDDCD0)),
+                        color: KMainColor,
+                        border: Border.all(color: KBorderColor),
                         borderRadius: BorderRadius.only(
                           topRight: Radius.circular(15),
                           bottomRight: Radius.circular(15),
@@ -242,11 +243,11 @@ class _ChoisirClientState extends State<ChoisirClient> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
-                            "AMINE ELMANSOURI",
+                            nom,
                             style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
-                                fontFamily: 'LouisGeorgeCafe',
+                                fontFamily: wePosfontFamily,
                                 color: Colors.black),
                           ),
                         ],

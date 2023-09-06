@@ -361,6 +361,7 @@ import 'package:wepos/screens/login.dart';
 import 'package:wepos/screens/messagerie.dart';
 import 'package:wepos/screens/modifierClient.dart';
 import 'package:wepos/screens/motdepaaseoublie.dart';
+import 'package:wepos/screens/navigation_drawer.dart';
 import 'package:wepos/screens/nouvelleVente.dart';
 import 'package:wepos/screens/rechercheCkient.dart';
 import 'package:wepos/screens/signInOrUp.dart';
@@ -368,165 +369,7 @@ import 'package:wepos/screens/signup.dart';
 import 'package:wepos/screens/splash/dashboard.dart';
 import 'package:wepos/screens/splash/splash_screen.dart';
 import 'package:wepos/screens/userprofile.dart';
-
-// class Bottom extends StatefulWidget {
-//   const Bottom({Key? key}) : super(key: key);
-
-//   @override
-//   State<Bottom> createState() => _BottomState();
-// }
-
-// class _BottomState extends State<Bottom> {
-//   int index_color = 0;
-//   List<Widget> screen = [
-//     BegginingScreen(),
-//     choiceui(),
-//     ModifierClient(),
-//     UserProfile(),
-//   ];
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: screen[index_color],
-//       bottomSheet: Container(
-//         width: 320,
-//         decoration: BoxDecoration(
-//           color: Colors.transparent,
-//         ),
-//         child: Visibility(
-//           visible: true,
-//           child: Padding(
-//             padding: const EdgeInsets.only(bottom: 8.0),
-//             child: SizedBox(
-//               height: 60,
-//               child: Stack(
-//                 alignment: Alignment.center,
-//                 children: [
-//                   Positioned(
-//                     bottom: 5,
-//                     child: Container(
-//                       width: 320, //MediaQuery.of(context).size.width
-//                       height: 50,
-//                       decoration: BoxDecoration(
-//                         color: Color(0xFFFFF9F7),
-//                         border: Border.all(color: Color(0xFFFDDCD0)),
-//                         borderRadius: BorderRadius.all(Radius.circular(52)),
-//                       ),
-//                     ),
-//                   ),
-//                   Padding(
-//                     padding: const EdgeInsets.symmetric(
-//                         horizontal: 0.0, vertical: 16.0),
-//                     child: Row(
-//                       crossAxisAlignment: CrossAxisAlignment.center,
-//                       children: [
-//                         SizedBox(
-//                           width: 25,
-//                         ),
-//                         GestureDetector(
-//                           onTap: () {
-//                             setState(() {
-//                               index_color = 0;
-//                             });
-//                           },
-//                           child: Icon(
-//                             Icons.home,
-//                             size: 30,
-//                             color: index_color == 0
-//                                 ? Color.fromRGBO(136, 14, 79, 1)
-//                                 : Colors.grey,
-//                           ),
-//                         ),
-//                         SizedBox(
-//                           width: 22,
-//                         ),
-//                         GestureDetector(
-//                           onTap: () {
-//                             setState(() {
-//                               index_color = 1;
-//                             });
-//                           },
-//                           child: Icon(
-//                             Icons.person_add_alt,
-//                             size: 30,
-//                             color: index_color == 1
-//                                 ? Color.fromRGBO(136, 14, 79, 1)
-//                                 : Colors.grey,
-//                           ),
-//                         ),
-//                         SizedBox(
-//                           width: 112,
-//                         ),
-//                         GestureDetector(
-//                           onTap: () {
-//                             setState(() {
-//                               index_color = 2;
-//                             });
-//                           },
-//                           child: Icon(
-//                             FontAwesomeIcons.bagShopping,
-//                             size: 25,
-//                             color: index_color == 2
-//                                 ? Color.fromRGBO(136, 14, 79, 1)
-//                                 : Colors.grey,
-//                           ),
-//                         ),
-//                         SizedBox(
-//                           width: 22,
-//                         ),
-//                         GestureDetector(
-//                           onTap: () {
-//                             setState(() {
-//                               index_color = 3;
-//                             });
-//                           },
-//                           child: Icon(
-//                             FontAwesomeIcons.envelope,
-//                             size: 25,
-//                             color: index_color == 3
-//                                 ? Color.fromRGBO(136, 14, 79, 1)
-//                                 : Colors.grey,
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                   Positioned(
-//                     bottom: 0,
-//                     child: GestureDetector(
-//                       onTap: () {
-//                         Navigator.of(context).push(
-//                           MaterialPageRoute(
-//                             builder: (context) => SpalshScreen(),
-//                           ),
-//                         );
-//                       },
-//                       child: Container(
-//                         // margin: EdgeInsets.only(top: 80),
-//                         width: 60,
-//                         height: 60,
-//                         decoration: BoxDecoration(
-//                           shape: BoxShape.circle,
-//                           color: Colors.purple,
-//                         ),
-//                         child: Icon(
-//                           Icons.add,
-//                           size: 30,
-//                           color: Colors.white,
-//                         ),
-//                       ),
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
+import 'package:wepos/screens/weposnavbar.dart';
 
 class Bottom extends StatefulWidget {
   const Bottom({Key? key}) : super(key: key);
@@ -539,16 +382,22 @@ class _BottomState extends State<Bottom> {
   int index_color = 0;
   List<Widget> screen = [
     ListeClients(),
-    choiceui(),
-    ModifierClient(),
-    UserProfile(),
+    Accueil(),
+    AjouterClient(),
+    Messagerie(),
   ];
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100),
+        child: WePosAppBar(scaffoldKey: _scaffoldKey), // Pass the scaffoldKey
+      ),
+      drawer: MyNavigationDrawer(),
       body: Stack(
         children: [
           screen[index_color],
@@ -556,7 +405,8 @@ class _BottomState extends State<Bottom> {
             bottom: 5,
             left: 0,
             right: 0,
-            child: buildBottomNavigationBar(screenHeight),
+            child: Visibility(
+                visible: true, child: buildBottomNavigationBar(screenHeight)),
           ),
         ],
       ),

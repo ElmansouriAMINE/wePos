@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:wepos/constants.dart';
 
 class DetailClient extends StatelessWidget {
   const DetailClient({super.key});
@@ -46,7 +47,7 @@ class DetailClient extends StatelessWidget {
                       width: 70,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage('assets/images/mainImage.png'),
+                          image: AssetImage('assets/images/Amine.jpeg'),
                           fit: BoxFit.cover,
                         ),
                         shape: BoxShape.circle,
@@ -79,10 +80,10 @@ class DetailClient extends StatelessWidget {
                         textAlign: TextAlign.left,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
-                          fontFamily: 'LouisGeorgeCafe',
+                          fontFamily: wePosfontFamily,
                           fontWeight: FontWeight.w900,
                           fontSize: 25,
-                          color: Color(0xFF967195),
+                          color: kUIName,
                         )),
                   ],
                 ),
@@ -91,21 +92,15 @@ class DetailClient extends StatelessWidget {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(
-                        top: 45,
-                        right: 20,
-                        left: 20,
-                        bottom:
-                            120), // Adjust the value as needed to position the container below the image
+                        top: 45, right: 20, left: 20, bottom: 120),
                     child: Container(
                       width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height -
-                          150, // Adjust the height as needed for the container
-
+                      height: MediaQuery.of(context).size.height - 150,
                       child: Stack(
                         children: [
                           Container(
-                            height: 520, // Adjust the height of the Container
-                            width: 390, // Adjust the width of the Container
+                            height: 520,
+                            width: 390,
                             decoration: BoxDecoration(
                                 // gradient: const LinearGradient(
                                 //   colors: [Colors.pink, Colors.purple],
@@ -120,10 +115,10 @@ class DetailClient extends StatelessWidget {
                           SizedBox(
                             height: 40,
                           ),
-                          // use the positioned widget to place
+
                           Positioned(
-                            left: 45, // Adjust the position of the text
-                            top: 65, // Adjust the position of the text
+                            left: 45,
+                            top: 65,
                             child: Center(
                               child: RichText(
                                 text: TextSpan(
@@ -132,7 +127,7 @@ class DetailClient extends StatelessWidget {
                                       text: "AMINE",
                                       style: TextStyle(
                                         color: Color(0xFF880E4F),
-                                        fontFamily: 'LouisGeorgeCafe',
+                                        fontFamily: wePosfontFamily,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 20,
                                       ),
@@ -148,7 +143,7 @@ class DetailClient extends StatelessWidget {
                                       text: "ELMANSOURI",
                                       style: TextStyle(
                                         color: Color(0xFF880E4F),
-                                        fontFamily: 'LouisGeorgeCafe',
+                                        fontFamily: wePosfontFamily,
                                         fontWeight: FontWeight.w900,
                                         fontSize: 20,
                                       ),
@@ -174,7 +169,7 @@ class DetailClient extends StatelessWidget {
                                         text: "jdjsdsjdjsjd dsjdsjdj",
                                         style: TextStyle(
                                           color: Color(0xFF880E4F),
-                                          fontFamily: 'LouisGeorgeCafe',
+                                          fontFamily: wePosfontFamily,
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
@@ -189,7 +184,7 @@ class DetailClient extends StatelessWidget {
                                         text: "ELMANSOURI",
                                         style: TextStyle(
                                           color: Color(0xFF880E4F),
-                                          fontFamily: 'LouisGeorgeCafe',
+                                          fontFamily: wePosfontFamily,
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
@@ -220,7 +215,7 @@ class DetailClient extends StatelessWidget {
                                           text: "+212 60000000",
                                           style: TextStyle(
                                             color: Color(0xFF880E4F),
-                                            fontFamily: 'LouisGeorgeCafe',
+                                            fontFamily: wePosfontFamily,
                                             fontWeight: FontWeight.w900,
                                           ),
                                         ),
@@ -251,7 +246,7 @@ class DetailClient extends StatelessWidget {
                                           text: "LOLLLLLLLLLLLLLLLL",
                                           style: TextStyle(
                                             color: Color(0xFF880E4F),
-                                            fontFamily: 'LouisGeorgeCafe',
+                                            fontFamily: wePosfontFamily,
                                             fontWeight: FontWeight.w900,
                                           ),
                                         ),
@@ -282,7 +277,7 @@ class DetailClient extends StatelessWidget {
                                           text: "A+",
                                           style: TextStyle(
                                             color: Color(0xFF880E4F),
-                                            fontFamily: 'LouisGeorgeCafe',
+                                            fontFamily: wePosfontFamily,
                                             fontWeight: FontWeight.w900,
                                           ),
                                         ),
@@ -313,7 +308,7 @@ class DetailClient extends StatelessWidget {
                                           text: "CCCCCCCCCCCCCCCCCCC",
                                           style: TextStyle(
                                             color: Color(0xFF880E4F),
-                                            fontFamily: 'LouisGeorgeCafe',
+                                            fontFamily: wePosfontFamily,
                                             fontWeight: FontWeight.w900,
                                           ),
                                         ),
@@ -332,14 +327,11 @@ class DetailClient extends StatelessWidget {
                     top: 0,
                     left: 60,
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(
-                          100), // Adjust the value as needed for the rounded corner
+                      borderRadius: BorderRadius.circular(100),
                       child: Image.asset(
-                        'assets/images/test.png', // Replace this with the path to your image
-                        width:
-                            100, // Adjust the width of the rounded image as needed
-                        height:
-                            100, // Adjust the height of the rounded image as needed
+                        'assets/images/Amine.jpeg',
+                        width: 100,
+                        height: 100,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -362,7 +354,7 @@ class DetailClient extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 18,
-                            fontFamily: 'LouisGeorgeCafe',
+                            fontFamily: wePosfontFamily,
                             fontWeight: FontWeight.w900,
                           ),
                         ),
@@ -389,7 +381,7 @@ class DetailClient extends StatelessWidget {
                           style: TextStyle(
                             color: Color(0xFFBE9182),
                             fontSize: 18,
-                            fontFamily: 'LouisGeorgeCafe',
+                            fontFamily: wePosfontFamily,
                             fontWeight: FontWeight.w900,
                           ),
                         ),

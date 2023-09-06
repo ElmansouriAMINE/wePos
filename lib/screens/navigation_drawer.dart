@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:wepos/constants.dart';
+import 'package:wepos/screens/accueil.dart';
 import 'package:wepos/screens/drawer_item.dart';
-import 'package:wepos/screens/people.dart';
 
 class MyCustomDrawerShape extends ContinuousRectangleBorder {
   @override
@@ -50,7 +51,7 @@ class MyNavigationDrawer extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Color(0xFFFFFFFF),
                           borderRadius: BorderRadius.circular(28),
-                          border: Border.all(color: Color(0xFFFDDCD0))),
+                          border: Border.all(color: KBorderColor)),
                       child: ExpansionTile(
                         title: Text('Organisme:',
                             style: TextStyle(
@@ -166,7 +167,7 @@ class MyNavigationDrawer extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Color(0xFFFFFFFF),
                           borderRadius: BorderRadius.circular(28),
-                          border: Border.all(color: Color(0xFFFDDCD0))),
+                          border: Border.all(color: KBorderColor)),
                       child: ExpansionTile(
                         title: Text('Gestion des services:',
                             style: TextStyle(
@@ -184,7 +185,7 @@ class MyNavigationDrawer extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Color(0xFFFFFFFF),
                           borderRadius: BorderRadius.circular(28),
-                          border: Border.all(color: Color(0xFFFDDCD0))),
+                          border: Border.all(color: KBorderColor)),
                       child: ExpansionTile(
                         title: Text('Gestion des produits:',
                             style: TextStyle(
@@ -257,7 +258,7 @@ class MyNavigationDrawer extends StatelessWidget {
     switch (index) {
       case 0:
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const People()));
+            context, MaterialPageRoute(builder: (context) => const Accueil()));
         break;
     }
   }
@@ -267,7 +268,7 @@ class MyNavigationDrawer extends StatelessWidget {
       children: [
         const CircleAvatar(
           radius: 30,
-          backgroundImage: AssetImage("assets/images/mainImage.png"),
+          backgroundImage: AssetImage("assets/images/Amine.jpeg"),
         ),
         const SizedBox(
           width: 20,

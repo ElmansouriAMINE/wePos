@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wepos/constants.dart';
 import 'package:wepos/screens/HoverButton.dart';
 import 'package:wepos/screens/mybutton.dart';
 
@@ -86,7 +87,7 @@ class _MessagerieState extends State<RechercheClientUI>
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 25,
-                    color: Color(0xFF967195),
+                    color: kUIName,
                   )),
             ],
           ),
@@ -115,10 +116,10 @@ class _MessagerieState extends State<RechercheClientUI>
                       // gradient: const LinearGradient(
                       //   colors: [Colors.pink, Colors.purple],
                       // ),
-                      color: Color(0xFFFFF9F7),
+                      color: KMainColor,
                       borderRadius: BorderRadius.circular(18),
                       border: Border.all(
-                        color: Color(0xFFFDDCD0),
+                        color: KBorderColor,
                         width: 2,
                       ),
                     ),
@@ -145,7 +146,7 @@ class _MessagerieState extends State<RechercheClientUI>
                                 "Dernière Achats",
                                 style: TextStyle(
                                   color: Color(0xFF718696),
-                                  fontFamily: 'LouisGeorgeCafe',
+                                  fontFamily: wePosfontFamily,
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -205,7 +206,7 @@ class _MessagerieState extends State<RechercheClientUI>
                       // gradient: const LinearGradient(
                       //   colors: [Colors.pink, Colors.purple],
                       // ),
-                      color: Color(0xFFFFF9F7),
+                      color: KMainColor,
                       borderRadius: BorderRadius.circular(18),
                     ),
                   ),
@@ -228,7 +229,7 @@ class _MessagerieState extends State<RechercheClientUI>
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Color(0xFF718696),
-                                fontFamily: 'LouisGeorgeCafe',
+                                fontFamily: wePosfontFamily,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -313,7 +314,7 @@ class _MessagerieState extends State<RechercheClientUI>
       height: 45,
       width: 350,
       decoration: BoxDecoration(
-        color: Color(0xFFFFF9F7),
+        color: KMainColor,
         borderRadius: BorderRadius.circular(15),
         // border: Border.all(
         //   color: const Color.fromARGB(255, 212, 144, 167),
@@ -348,10 +349,10 @@ class _MessagerieState extends State<RechercheClientUI>
       height: 45,
       width: 350,
       decoration: BoxDecoration(
-        color: Color(0xFFFFF9F7),
+        color: KMainColor,
         borderRadius: BorderRadius.circular(15),
         border: Border.all(
-          color: Color(0xFFFDDCD0),
+          color: KBorderColor,
           width: 2,
         ),
       ),
@@ -370,7 +371,7 @@ class _MessagerieState extends State<RechercheClientUI>
             hintText: "Produits",
             hintStyle: TextStyle(
                 color: Color(0xFF718696),
-                fontFamily: 'LouisGeorgeCafe',
+                fontFamily: wePosfontFamily,
                 fontSize: 15,
                 fontWeight: FontWeight.bold),
             contentPadding: EdgeInsets.symmetric(
@@ -388,10 +389,10 @@ class _MessagerieState extends State<RechercheClientUI>
       height: 45,
       width: 350,
       decoration: BoxDecoration(
-        color: Color(0xFFFFF9F7),
+        color: KMainColor,
         borderRadius: BorderRadius.circular(15),
         border: Border.all(
-          color: Color(0xFFFDDCD0),
+          color: KBorderColor,
           width: 2,
         ),
       ),
@@ -410,7 +411,7 @@ class _MessagerieState extends State<RechercheClientUI>
             hintText: "Services",
             hintStyle: TextStyle(
                 color: Color(0xFF718696),
-                fontFamily: 'LouisGeorgeCafe',
+                fontFamily: wePosfontFamily,
                 fontSize: 15,
                 fontWeight: FontWeight.bold),
             contentPadding: EdgeInsets.symmetric(
@@ -441,10 +442,10 @@ class _DropdownButtonExampleState extends State<DropdownButtonCSP> {
       height: 45,
       width: 350,
       decoration: BoxDecoration(
-        color: Color(0xFFFFF9F7),
+        color: KMainColor,
         borderRadius: BorderRadius.circular(28),
         border: Border.all(
-          color: Color(0xFFFDDCD0),
+          color: KBorderColor,
           width: 2.0,
         ),
       ),
@@ -475,7 +476,7 @@ class _DropdownButtonExampleState extends State<DropdownButtonCSP> {
                         value,
                         style: TextStyle(
                           color: Color(0xFF718696),
-                          fontFamily: 'LouisGeorgeCafe',
+                          fontFamily: wePosfontFamily,
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                         ),
@@ -523,10 +524,10 @@ class _DropdownButtonVilleState extends State<DropdownButtonVille> {
       height: 45,
       width: 350,
       decoration: BoxDecoration(
-        color: Color(0xFFFFF9F7),
+        color: KMainColor,
         borderRadius: BorderRadius.circular(28),
         border: Border.all(
-          color: Color(0xFFFDDCD0),
+          color: KBorderColor,
           width: 2.0,
         ),
       ),
@@ -557,7 +558,7 @@ class _DropdownButtonVilleState extends State<DropdownButtonVille> {
                         value,
                         style: TextStyle(
                           color: Color(0xFF718696),
-                          fontFamily: 'LouisGeorgeCafe',
+                          fontFamily: wePosfontFamily,
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                         ),

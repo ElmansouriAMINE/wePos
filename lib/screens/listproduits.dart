@@ -11,48 +11,6 @@ class ListProduits extends StatelessWidget {
         children: [
           Column(
             children: [
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                alignment: Alignment.bottomCenter,
-                height: 100,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Color(0xFFFACCBE), Color(0xFFFEE8DD)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  borderRadius:
-                      BorderRadius.vertical(bottom: Radius.circular(20)),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      child: IconButton(
-                          icon: const Icon(Icons.menu), onPressed: () {}),
-                    ),
-                    Container(
-                      child: Image.asset(
-                        'assets/images/wePos_logo.png',
-                        height: 170,
-                        width: 120,
-                      ),
-                    ),
-                    Container(
-                      height: 90,
-                      width: 70,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/mainImage.png'),
-                          fit: BoxFit.cover,
-                        ),
-                        shape: BoxShape.circle,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
               const SizedBox(
                 height: 25,
               ),
@@ -182,8 +140,8 @@ class _ProductCardState extends State<ProductCard> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("AMINE"),
-                          Text("Ali"),
+                          Text("Produit"),
+                          Text("Description"),
                         ],
                       ),
                       Row(

@@ -210,42 +210,10 @@ class _BodyState extends State<Body> {
                             SizedBox(
                               height: 34,
                             ),
-                            Container(
-                              padding: EdgeInsets.only(top: 3, left: 3),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                              ),
-                              child: MaterialButton(
-                                minWidth: 100,
-                                height: 45,
-                                onPressed: () {
-                                  if (_currentPage < 2) {
-                                    setState(() {
-                                      _currentPage++;
-                                    });
-                                    _pageController.animateToPage(
-                                      _currentPage,
-                                      duration: Duration(milliseconds: 300),
-                                      curve: Curves.easeInOut,
-                                    );
-                                  }
-                                },
-                                color: Color.fromARGB(255, 142, 20, 67),
-                                elevation: 0,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50)),
-                                child: Text(
-                                  "Next",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 18,
-                                      color: Colors.white),
-                                ),
-                              ),
-                            ),
                           ],
                         ),
                       ),
+
                       Positioned.fill(
                         child: PageView(
                           controller: _pageController,
@@ -268,6 +236,47 @@ class _BodyState extends State<Body> {
                               'This is page 3...',
                             ),
                           ],
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(top: 420, left: 3),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        child: GestureDetector(
+                          child: MaterialButton(
+                            minWidth: 100,
+                            height: 45,
+                            onPressed: () {
+                              if (_currentPage < 2) {
+                                setState(() {
+                                  _currentPage++;
+                                });
+                                _pageController.animateToPage(
+                                  _currentPage,
+                                  duration: Duration(milliseconds: 300),
+                                  curve: Curves.easeInOut,
+                                );
+                              }
+                            },
+                            color: Color.fromARGB(255, 142, 20, 67),
+                            elevation: 0,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50)),
+                            child: TextButton(
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/third');
+                              },
+                              child: Text(
+                                "Next",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 18,
+                                    color: Colors.white),
+                              ),
+                            ),
+                          ),
+                          onTap: () => Navigator.pushNamed(context, '/third'),
                         ),
                       ),
                       // Row(

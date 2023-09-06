@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:wepos/constants.dart';
 import 'package:wepos/screens/HoverButton.dart';
 import 'package:wepos/screens/mybutton.dart';
 
@@ -57,47 +58,6 @@ class _MessagerieState extends State<Messagerie>
   Widget build(BuildContext context) {
     return ListView(children: [
       Column(children: [
-        Container(
-          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-          alignment: Alignment.bottomCenter,
-          height: 100,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Color(0xFFFACCBE), Color(0xFFFEE8DD)],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-            borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                child:
-                    IconButton(icon: const Icon(Icons.menu), onPressed: () {}),
-              ),
-              Container(
-                child: Image.asset(
-                  'assets/images/wePos_logo.png',
-                  height: 170,
-                  width: 120,
-                ),
-              ),
-              Container(
-                height: 90,
-                width: 70,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/mainImage.png'),
-                    fit: BoxFit.cover,
-                  ),
-                  shape: BoxShape.circle,
-                ),
-              ),
-            ],
-          ),
-        ),
         const SizedBox(
           height: 15,
         ),
@@ -124,7 +84,7 @@ class _MessagerieState extends State<Messagerie>
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 25,
-                    color: Color(0xFF967195),
+                    color: kUIName,
                   )),
             ],
           ),
@@ -166,7 +126,7 @@ class _MessagerieState extends State<Messagerie>
                       // gradient: const LinearGradient(
                       //   colors: [Colors.pink, Colors.purple],
                       // ),
-                      color: Color(0xFFFFF9F7),
+                      color: KMainColor,
                       borderRadius: BorderRadius.circular(18),
                     ),
                   ),
@@ -226,7 +186,7 @@ class _MessagerieState extends State<Messagerie>
                       // gradient: const LinearGradient(
                       //   colors: [Colors.pink, Colors.purple],
                       // ),
-                      color: Color(0xFFFFF9F7), //Color(0xFFFFF9F7)
+                      color: KMainColor, //KMainColor
                       borderRadius: BorderRadius.circular(18),
                     ),
                   ),
@@ -287,7 +247,7 @@ class _MessagerieState extends State<Messagerie>
                                               ),
                                               Icon(
                                                 Iconsax.add,
-                                                color: Color(0xFFFDDCD0),
+                                                color: KBorderColor,
                                                 size: 60,
                                                 // weight: 180,
                                                 // opticalSize: 180,
@@ -461,6 +421,9 @@ class _MessagerieState extends State<Messagerie>
                   color: Colors.white),
             ),
           ),
+        ),
+        SizedBox(
+          height: 70,
         ),
       ]),
     ]);

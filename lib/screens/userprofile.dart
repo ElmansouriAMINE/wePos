@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wepos/constants.dart';
 
 class UserProfile extends StatefulWidget {
   const UserProfile({super.key});
@@ -42,7 +43,7 @@ class _UserProfileState extends State<UserProfile> {
                 width: 70,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/images/mainImage.png'),
+                    image: AssetImage('assets/images/Amine.jpeg'),
                     fit: BoxFit.cover,
                   ),
                   shape: BoxShape.circle,
@@ -116,7 +117,7 @@ class _UserProfileState extends State<UserProfile> {
                               style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w900,
-                                  fontFamily: 'LouisGeorgeCafe',
+                                  fontFamily: wePosfontFamily,
                                   color: Color(0xFFC9C9C9)),
                             ),
                           ],
@@ -145,7 +146,7 @@ class _UserProfileState extends State<UserProfile> {
                               style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w900,
-                                  fontFamily: 'LouisGeorgeCafe',
+                                  fontFamily: wePosfontFamily,
                                   color: Color(0xFFC9C9C9)),
                             ),
                           ],
@@ -297,7 +298,7 @@ class _UserProfileState extends State<UserProfile> {
                             style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w900,
-                                fontFamily: 'LouisGeorgeCafe',
+                                fontFamily: wePosfontFamily,
                                 color: Color(0xFFA5A5A5)),
                           ),
                         ),

@@ -28,9 +28,9 @@ class _DashboardState extends State<Dashboard> {
             width: 335,
             padding: const EdgeInsets.symmetric(horizontal: 25),
             decoration: BoxDecoration(
-              color: const Color(0xFFFFF9F7),
+              color: KMainColor,
               borderRadius: BorderRadius.circular(15),
-              border: Border.all(color: Color(0xFFFDDCD0)),
+              border: Border.all(color: KBorderColor),
             ),
             child: Row(
               children: [
@@ -51,17 +51,17 @@ class _DashboardState extends State<Dashboard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     Text(
-                      "AMINE ELMANSOURI",
+                      "Prénom Nom",
                       style: TextStyle(
                           fontSize: 20,
-                          fontFamily: 'LouisGeorgeCafe',
+                          fontFamily: wePosfontFamily,
                           fontWeight: FontWeight.w900,
                           color: Colors.black),
                     ),
                     Text(
-                      "HOLA QUESTA",
+                      "Description",
                       style: TextStyle(
-                          fontFamily: 'LouisGeorgeCafe',
+                          fontFamily: wePosfontFamily,
                           fontWeight: FontWeight.w900,
                           fontSize: 12,
                           color: Colors.black),
@@ -140,7 +140,7 @@ class _DashboardState extends State<Dashboard> {
                       width: 70,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage('assets/images/mainImage.png'),
+                          image: AssetImage('assets/images/Amine.jpeg'),
                           fit: BoxFit.cover,
                         ),
                         shape: BoxShape.circle,
@@ -171,7 +171,7 @@ class _DashboardState extends State<Dashboard> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                          fontFamily: 'LouisGeorgeCafe',
+                          fontFamily: wePosfontFamily,
                           fontWeight: FontWeight.w900,
                           fontSize: 25,
                           color: Color.fromARGB(255, 172, 70, 190)),
@@ -247,6 +247,9 @@ class _DashboardState extends State<Dashboard> {
               buildClientList(),
               buildClientList(),
               buildClientList(),
+              const SizedBox(
+                height: 55,
+              ),
             ],
           ),
         ],

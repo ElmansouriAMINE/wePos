@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wepos/constants.dart';
 import 'package:wepos/screens/navigation_drawer.dart';
 
 import 'package:wepos/screens/splash/splash_screen.dart';
@@ -16,8 +17,8 @@ class _ListeClientsState extends State<ListeClients> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
-      drawer: MyNavigationDrawer(),
+      // key: _scaffoldKey,
+      // drawer: MyNavigationDrawer(),
       backgroundColor: Color(0xFFF5F5F5),
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 68.0),
@@ -46,7 +47,7 @@ class _ListeClientsState extends State<ListeClients> {
         children: [
           Column(
             children: [
-              MyNavBar(),
+              // MyNavBar(),
               const SizedBox(
                 height: 25,
               ),
@@ -69,7 +70,7 @@ class _ListeClientsState extends State<ListeClients> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                          fontFamily: 'LouisGeorgeCafe',
+                          fontFamily: wePosfontFamily,
                           fontWeight: FontWeight.w900,
                           fontStyle: FontStyle.normal,
                           fontSize: 25,
@@ -137,15 +138,15 @@ class _ListeClientsState extends State<ListeClients> {
               const SizedBox(
                 height: 25,
               ),
-              buildClientList(),
-              buildClientList(),
-              buildClientList(),
-              buildClientList(),
-              buildClientList(),
-              buildClientList(),
-              buildClientList(),
-              buildClientList(),
-              buildClientList(),
+              buildClientList("AMINE Client", "assets/images/mainImage.png"),
+              buildClientList("ALI LOUIS", "assets/images/mainImage.png"),
+              buildClientList("OMAR LOUIS", "assets/images/mainImage.png"),
+              buildClientList("Alex LOUIS", "assets/images/mainImage.png"),
+              buildClientList("John LOUIS", "assets/images/mainImage.png"),
+              buildClientList("Louis LOUIS", "assets/images/mainImage.png"),
+              buildClientList("ISAAC LOUIS", "assets/images/mainImage.png"),
+              buildClientList("LILE LOUIS", "assets/images/mainImage.png"),
+              buildClientList("TOM LOUIS", "assets/images/mainImage.png"),
             ],
           ),
         ],
@@ -189,7 +190,7 @@ class _ListeClientsState extends State<ListeClients> {
             width: 70,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/mainImage.png'),
+                image: AssetImage('assets/images/Amine.jpeg'),
                 fit: BoxFit.cover,
               ),
               shape: BoxShape.circle,
@@ -200,7 +201,7 @@ class _ListeClientsState extends State<ListeClients> {
     );
   }
 
-  Container buildClientList() {
+  Container buildClientList(String name, String ImageUrl) {
     return Container(
         margin: const EdgeInsets.only(bottom: 8),
         width: double.infinity,
@@ -218,7 +219,7 @@ class _ListeClientsState extends State<ListeClients> {
                   width: 70,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images/mainImage.png'),
+                      image: AssetImage(ImageUrl),
                       fit: BoxFit.cover,
                     ),
                     shape: BoxShape.circle,
@@ -233,8 +234,8 @@ class _ListeClientsState extends State<ListeClients> {
                       height: 35,
                       width: 270,
                       decoration: BoxDecoration(
-                        color: Color(0xFFFFF9F7),
-                        border: Border.all(color: Color(0xFFFDDCD0)),
+                        color: KMainColor,
+                        border: Border.all(color: KBorderColor),
                         borderRadius: BorderRadius.only(
                           topRight: Radius.circular(15),
                           bottomRight: Radius.circular(15),
@@ -246,11 +247,11 @@ class _ListeClientsState extends State<ListeClients> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
-                            "AMINE ELMANSOURI",
+                            name,
                             style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
-                                fontFamily: 'LouisGeorgeCafe',
+                                fontFamily: wePosfontFamily,
                                 color: Colors.black),
                           ),
                         ],

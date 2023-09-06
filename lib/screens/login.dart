@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:wepos/constants.dart';
 import 'package:wepos/screens/animation/FadeAnimation.dart';
 import 'package:wepos/screens/motdepaaseoublie.dart';
 
@@ -38,15 +39,18 @@ class LoginPage extends StatelessWidget {
                     children: <Widget>[
                       FadeAnimation(
                         1,
-                        Transform.scale(
-                          scale: 2,
-                          child: Container(
-                            height: 130,
-                            width: 120,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image:
-                                    AssetImage('assets/images/wePos_logo.png'),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 30),
+                          child: Transform.scale(
+                            scale: 2,
+                            child: Container(
+                              height: 130,
+                              width: 120,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/images/wePos_logo.png'),
+                                ),
                               ),
                             ),
                           ),
@@ -62,7 +66,7 @@ class LoginPage extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 31,
                                 fontWeight: FontWeight.w700,
-                                fontFamily: 'LouisGeorgeCafe',
+                                fontFamily: wePosfontFamily,
                                 color: Color(0xFF718696)),
                           )),
                     ],
@@ -129,7 +133,9 @@ class LoginPage extends StatelessWidget {
                           child: MaterialButton(
                             minWidth: double.infinity,
                             height: 50,
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/fourth');
+                            },
                             color: Color.fromARGB(255, 142, 20, 67),
                             elevation: 0,
                             shape: RoundedRectangleBorder(
@@ -207,7 +213,7 @@ class LoginPage extends StatelessWidget {
                 hintStyle: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w100,
-                    fontFamily: 'LouisGeorgeCafe',
+                    fontFamily: wePosfontFamily,
                     color: Color(0xFF718696)),
                 contentPadding:
                     EdgeInsets.symmetric(vertical: 10, horizontal: 10),

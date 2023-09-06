@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wepos/constants.dart';
 
 class choiceui extends StatefulWidget {
   const choiceui({super.key});
@@ -95,7 +96,7 @@ class _choiceuiState extends State<choiceui> {
                                 "Produits",
                                 style: TextStyle(
                                     fontSize: 12,
-                                    fontFamily: 'LouisGeorgeCafe',
+                                    fontFamily: wePosfontFamily,
                                     fontWeight: FontWeight.bold,
                                     color: isHoveredProduits
                                         ? Color(0xFFFFFFFF)
@@ -166,7 +167,7 @@ class _choiceuiState extends State<choiceui> {
                                 "Service",
                                 style: TextStyle(
                                     fontSize: 12,
-                                    fontFamily: 'LouisGeorgeCafe',
+                                    fontFamily: wePosfontFamily,
                                     fontWeight: FontWeight.bold,
                                     color: isHoveredService
                                         ? Color(0xFFFFFFFF)

@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:wepos/constants.dart';
 import 'package:wepos/screens/navigation_drawer.dart';
 
 class AjouterClient extends StatefulWidget {
@@ -40,7 +41,7 @@ class _CreatProfileState extends State<AjouterClient> {
             children: [
               Column(
                 children: [
-                  MyNavBar(),
+                  // MyNavBar(),
                   const SizedBox(
                     height: 10,
                   ),
@@ -63,10 +64,10 @@ class _CreatProfileState extends State<AjouterClient> {
                           textAlign: TextAlign.left,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
-                              fontFamily: 'LouisGeorgeCafe',
+                              fontFamily: wePosfontFamily,
                               fontWeight: FontWeight.w900,
                               fontSize: 25,
-                              color: Color(0xFF967195)),
+                              color: kUIName),
                         ),
                       ],
                     ),
@@ -85,31 +86,34 @@ class _CreatProfileState extends State<AjouterClient> {
                           SizedBox(
                             height: 20,
                           ),
-                          nameTextField(),
+                          MyInPutTextField(_name, "Nom", "Name can't be empty"),
                           SizedBox(
                             height: 20,
                           ),
-                          prenomTextField(),
+                          MyInPutTextField(
+                              _prenom, "Prénom", "Prénom can't be empty"),
                           SizedBox(
                             height: 20,
                           ),
-                          ageTextField(),
+                          MyInPutTextField(_age, "Age", "Age can't be empty"),
                           SizedBox(
                             height: 20,
                           ),
-                          gsmTextField(),
+                          MyInPutTextField(_gsm, "GSM", "GSM can't be empty"),
                           SizedBox(
                             height: 20,
                           ),
-                          emailTextField(),
+                          MyInPutTextField(
+                              _email, "Email", "Email can't be empty"),
                           SizedBox(
                             height: 20,
                           ),
-                          cspTextField(),
+                          MyInPutTextField(_csp, "CSP", "CSP can't be empty"),
                           SizedBox(
                             height: 20,
                           ),
-                          adresseTextField(),
+                          MyInPutTextField(
+                              _adresse, "Adresse", "Adresse can't be empty"),
                           SizedBox(
                             height: 20,
                           ),
@@ -135,13 +139,16 @@ class _CreatProfileState extends State<AjouterClient> {
                                           style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 18,
-                                            fontFamily: 'LouisGeorgeCafe',
+                                            fontFamily: wePosfontFamily,
                                             fontWeight: FontWeight.w900,
                                           ),
                                         ),
                                 ),
                               ),
                             ),
+                          ),
+                          SizedBox(
+                            height: 60,
                           ),
                         ],
                       ),
@@ -285,7 +292,7 @@ class _CreatProfileState extends State<AjouterClient> {
     );
   }
 
-  Widget nameTextField() {
+  Widget MyInPutTextField(var myvar, String name, String errorMessage) {
     return Container(
       height: 45,
       width: 250,
@@ -300,16 +307,16 @@ class _CreatProfileState extends State<AjouterClient> {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: TextFormField(
-          controller: _name,
+          controller: myvar,
           validator: (value) {
-            if (value!.isEmpty) return "Name can't be empty";
+            if (value!.isEmpty) return errorMessage;
 
             return null;
           },
           decoration: InputDecoration(
             enabledBorder: InputBorder.none,
             focusedBorder: InputBorder.none,
-            hintText: "Nom",
+            hintText: name,
             contentPadding: EdgeInsets.symmetric(
               horizontal: 10,
               vertical: 10,
@@ -320,260 +327,50 @@ class _CreatProfileState extends State<AjouterClient> {
     );
   }
 
-  Widget prenomTextField() {
-    return Container(
-      height: 45,
-      width: 250,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        border: Border.all(
-          color: const Color.fromARGB(255, 212, 144, 167),
-          width: 2,
-        ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: TextFormField(
-          controller: _prenom,
-          validator: (value) {
-            if (value!.isEmpty) return "Name can't be empty";
-
-            return null;
-          },
-          decoration: InputDecoration(
-            enabledBorder: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            hintText: "Prénom",
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: 10,
-              vertical: 10,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget ageTextField() {
-    return Container(
-      height: 45,
-      width: 250,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        border: Border.all(
-          color: const Color.fromARGB(255, 212, 144, 167),
-          width: 2,
-        ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: TextFormField(
-          controller: _age,
-          validator: (value) {
-            if (value!.isEmpty) return "Name can't be empty";
-
-            return null;
-          },
-          decoration: InputDecoration(
-            enabledBorder: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            hintText: "Age",
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: 10,
-              vertical: 10,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget gsmTextField() {
-    return Container(
-      height: 45,
-      width: 250,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        border: Border.all(
-          color: const Color.fromARGB(255, 212, 144, 167),
-          width: 2,
-        ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: TextFormField(
-          controller: _gsm,
-          validator: (value) {
-            if (value!.isEmpty) return "Name can't be empty";
-
-            return null;
-          },
-          decoration: InputDecoration(
-            enabledBorder: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            hintText: "GSM",
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: 10,
-              vertical: 10,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget emailTextField() {
-    return Container(
-      height: 45,
-      width: 250,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        border: Border.all(
-          color: const Color.fromARGB(255, 212, 144, 167),
-          width: 2,
-        ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: TextFormField(
-          controller: _email,
-          validator: (value) {
-            if (value!.isEmpty) return "Name can't be empty";
-
-            return null;
-          },
-          decoration: InputDecoration(
-            enabledBorder: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            hintText: "Email",
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: 10,
-              vertical: 10,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget cspTextField() {
-    return Container(
-      height: 45,
-      width: 250,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        border: Border.all(
-          color: const Color.fromARGB(255, 212, 144, 167),
-          width: 2,
-        ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: TextFormField(
-          controller: _csp,
-          validator: (value) {
-            if (value!.isEmpty) return "Name can't be empty";
-
-            return null;
-          },
-          decoration: InputDecoration(
-            enabledBorder: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            hintText: "CSP",
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: 10,
-              vertical: 10,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget adresseTextField() {
-    return Container(
-      height: 45,
-      width: 250,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        border: Border.all(
-          color: const Color.fromARGB(255, 212, 144, 167),
-          width: 2,
-        ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: TextFormField(
-          controller: _adresse,
-          validator: (value) {
-            if (value!.isEmpty) return "Name can't be empty";
-
-            return null;
-          },
-          decoration: InputDecoration(
-            enabledBorder: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            hintText: "Adresse",
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: 10,
-              vertical: 10,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Container MyNavBar() {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-      alignment: Alignment.bottomCenter,
-      height: 100,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Color(0xFFFACCBE), Color(0xFFFEE8DD)],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-        borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-            child: IconButton(
-                icon: const Icon(Icons.menu),
-                onPressed: () {
-                  _scaffoldKey.currentState!.openDrawer();
-                }),
-          ),
-          Container(
-            child: Image.asset(
-              'assets/images/wePos_logo.png',
-              height: 170,
-              width: 120,
-            ),
-          ),
-          Container(
-            height: 90,
-            width: 70,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/mainImage.png'),
-                fit: BoxFit.cover,
-              ),
-              shape: BoxShape.circle,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+  // Container MyNavBar() {
+  //   return Container(
+  //     padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+  //     alignment: Alignment.bottomCenter,
+  //     height: 100,
+  //     decoration: BoxDecoration(
+  //       gradient: LinearGradient(
+  //         colors: [Color(0xFFFACCBE), Color(0xFFFEE8DD)],
+  //         begin: Alignment.topLeft,
+  //         end: Alignment.bottomRight,
+  //       ),
+  //       borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+  //     ),
+  //     child: Row(
+  //       crossAxisAlignment: CrossAxisAlignment.center,
+  //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //       children: [
+  //         Container(
+  //           child: IconButton(
+  //               icon: const Icon(Icons.menu),
+  //               onPressed: () {
+  //                 _scaffoldKey.currentState!.openDrawer();
+  //               }),
+  //         ),
+  //         Container(
+  //           child: Image.asset(
+  //             'assets/images/wePos_logo.png',
+  //             height: 170,
+  //             width: 120,
+  //           ),
+  //         ),
+  //         Container(
+  //           height: 90,
+  //           width: 70,
+  //           decoration: BoxDecoration(
+  //             image: DecorationImage(
+  //               image: AssetImage('assets/images/Amine.jpeg'),
+  //               fit: BoxFit.cover,
+  //             ),
+  //             shape: BoxShape.circle,
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
 }

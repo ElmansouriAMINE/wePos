@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:wepos/constants.dart';
 
 class ModifierClient extends StatefulWidget {
   const ModifierClient({super.key});
@@ -35,48 +36,6 @@ class _CreatProfileState extends State<ModifierClient> {
             children: [
               Column(
                 children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                    alignment: Alignment.bottomCenter,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Color(0xFFFACCBE), Color(0xFFFEE8DD)],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      borderRadius:
-                          BorderRadius.vertical(bottom: Radius.circular(20)),
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          child: IconButton(
-                              icon: const Icon(Icons.menu), onPressed: () {}),
-                        ),
-                        Container(
-                          child: Image.asset(
-                            'assets/images/wePos_logo.png',
-                            height: 170,
-                            width: 120,
-                          ),
-                        ),
-                        Container(
-                          height: 90,
-                          width: 70,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/mainImage.png'),
-                              fit: BoxFit.cover,
-                            ),
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                   const SizedBox(
                     height: 10,
                   ),
@@ -99,10 +58,10 @@ class _CreatProfileState extends State<ModifierClient> {
                           textAlign: TextAlign.left,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
-                              fontFamily: 'LouisGeorgeCafe',
+                              fontFamily: wePosfontFamily,
                               fontWeight: FontWeight.w900,
                               fontSize: 25,
-                              color: Color(0xFF967195)),
+                              color: kUIName),
                         ),
                       ],
                     ),
@@ -171,7 +130,7 @@ class _CreatProfileState extends State<ModifierClient> {
                                           style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 18,
-                                            fontFamily: 'LouisGeorgeCafe',
+                                            fontFamily: wePosfontFamily,
                                             fontWeight: FontWeight.w900,
                                           ),
                                         ),

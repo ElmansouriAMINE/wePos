@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:wepos/constants.dart';
 import 'package:wepos/screens/navigation_drawer.dart';
 
 class Accueil extends StatefulWidget {
@@ -57,7 +58,7 @@ class _YearPickerScreenState extends State<Accueil> {
     );
   }
 
-  selectMonth(context) async {
+  selectMonthofThatYear(context) async {
     print("Calling date picker");
     showDialog(
       context: context,
@@ -141,7 +142,7 @@ class _YearPickerScreenState extends State<Accueil> {
               //     ],
               //   ),
               // ),
-              MyNavBar(),
+              // MyNavBar(),
               const SizedBox(
                 height: 15,
               ),
@@ -195,11 +196,11 @@ class _YearPickerScreenState extends State<Accueil> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              showYear,
+                              showMonth,
                             ),
                             GestureDetector(
                               onTap: () {
-                                selectYear(context);
+                                selectMonthofThatYear(context);
                               },
                               child: const Icon(
                                 Icons.calendar_month,
@@ -230,7 +231,7 @@ class _YearPickerScreenState extends State<Accueil> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                          fontFamily: 'LouisGeorgeCafe',
+                          fontFamily: wePosfontFamily,
                           fontWeight: FontWeight.w900,
                           fontSize: 25,
                           color: Color(0xFF86044E)),
@@ -262,7 +263,7 @@ class _YearPickerScreenState extends State<Accueil> {
                           // gradient: const LinearGradient(
                           //   colors: [Colors.pink, Colors.purple],
                           // ),
-                          color: Color(0xFFFFF9F7),
+                          color: KMainColor,
                           borderRadius: BorderRadius.circular(18),
                         ),
                       ),
@@ -281,7 +282,7 @@ class _YearPickerScreenState extends State<Accueil> {
                               TextSpan(
                                 text: "950 ",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
+                                  color: KSecondaryColor,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -314,15 +315,15 @@ class _YearPickerScreenState extends State<Accueil> {
                               TextSpan(
                                 text: "Totale: ",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
-                                  fontFamily: 'LouisGeorgeCafe',
+                                  color: KSecondaryColor,
+                                  fontFamily: wePosfontFamily,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               TextSpan(
                                 text: "950",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
+                                  color: KSecondaryColor,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -342,8 +343,8 @@ class _YearPickerScreenState extends State<Accueil> {
                               TextSpan(
                                 text: "Les nouveaux ",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
-                                  fontFamily: 'LouisGeorgeCafe',
+                                  color: KSecondaryColor,
+                                  fontFamily: wePosfontFamily,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -370,8 +371,8 @@ class _YearPickerScreenState extends State<Accueil> {
                               TextSpan(
                                 text: "Femme: 730 ",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
-                                  fontFamily: 'LouisGeorgeCafe',
+                                  color: KSecondaryColor,
+                                  fontFamily: wePosfontFamily,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -398,8 +399,8 @@ class _YearPickerScreenState extends State<Accueil> {
                               TextSpan(
                                 text: "Homme:112 ",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
-                                  fontFamily: 'LouisGeorgeCafe',
+                                  color: KSecondaryColor,
+                                  fontFamily: wePosfontFamily,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -472,7 +473,7 @@ class _YearPickerScreenState extends State<Accueil> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                          fontFamily: 'LouisGeorgeCafe',
+                          fontFamily: wePosfontFamily,
                           fontWeight: FontWeight.w900,
                           fontSize: 25,
                           color: Color(0xFF86044E)),
@@ -504,7 +505,7 @@ class _YearPickerScreenState extends State<Accueil> {
                           // gradient: const LinearGradient(
                           //   colors: [Colors.pink, Colors.purple],
                           // ),
-                          color: Color(0xFFFFF9F7),
+                          color: KMainColor,
                           borderRadius: BorderRadius.circular(18),
                         ),
                       ),
@@ -525,7 +526,7 @@ class _YearPickerScreenState extends State<Accueil> {
                               TextSpan(
                                 text: "700 KDhs ",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
+                                  color: KSecondaryColor,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
                                 ),
@@ -587,15 +588,15 @@ class _YearPickerScreenState extends State<Accueil> {
                               TextSpan(
                                 text: "Services: ",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
-                                  fontFamily: 'LouisGeorgeCafe',
+                                  color: KSecondaryColor,
+                                  fontFamily: wePosfontFamily,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               TextSpan(
                                 text: "100.000 DHS",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
+                                  color: KSecondaryColor,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -622,15 +623,15 @@ class _YearPickerScreenState extends State<Accueil> {
                               TextSpan(
                                 text: "Produits: ",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
-                                  fontFamily: 'LouisGeorgeCafe',
+                                  color: KSecondaryColor,
+                                  fontFamily: wePosfontFamily,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               TextSpan(
                                 text: "300.000 DHS",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
+                                  color: KSecondaryColor,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -665,7 +666,7 @@ class _YearPickerScreenState extends State<Accueil> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                          fontFamily: 'LouisGeorgeCafe',
+                          fontFamily: wePosfontFamily,
                           fontWeight: FontWeight.w900,
                           fontSize: 25,
                           color: Color(0xFF86044E)),
@@ -697,7 +698,7 @@ class _YearPickerScreenState extends State<Accueil> {
                           // gradient: const LinearGradient(
                           //   colors: [Colors.pink, Colors.purple],
                           // ),
-                          color: const Color(0xFFFFF9F7),
+                          color: KMainColor,
                           borderRadius: BorderRadius.circular(18),
                         ),
                       ),
@@ -725,7 +726,7 @@ class _YearPickerScreenState extends State<Accueil> {
                               TextSpan(
                                 text: "25 KDhs ",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
+                                  color: KSecondaryColor,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
                                 ),
@@ -752,15 +753,15 @@ class _YearPickerScreenState extends State<Accueil> {
                               TextSpan(
                                 text: "Nombre des bons d'achats: ",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
-                                  fontFamily: 'LouisGeorgeCafe',
+                                  color: KSecondaryColor,
+                                  fontFamily: wePosfontFamily,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               TextSpan(
                                 text: "100.000 DHS",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
+                                  color: KSecondaryColor,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -787,15 +788,15 @@ class _YearPickerScreenState extends State<Accueil> {
                               TextSpan(
                                 text: "Nombre des bons d'achats utilisés: ",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
-                                  fontFamily: 'LouisGeorgeCafe',
+                                  color: KSecondaryColor,
+                                  fontFamily: wePosfontFamily,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               TextSpan(
                                 text: "300.000 DHS",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
+                                  color: KSecondaryColor,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -822,7 +823,7 @@ class _YearPickerScreenState extends State<Accueil> {
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
-                          fontFamily: 'LouisGeorgeCafe',
+                          fontFamily: wePosfontFamily,
                           fontWeight: FontWeight.bold,
                           fontSize: 25,
                           color: Color(0xFF86044E)),
@@ -855,7 +856,7 @@ class _YearPickerScreenState extends State<Accueil> {
                           // gradient: const LinearGradient(
                           //   colors: [Colors.pink, Colors.purple],
                           // ),
-                          color: const Color(0xFFFFF9F7),
+                          color: KMainColor,
                           borderRadius: BorderRadius.circular(18),
                         ),
                       ),
@@ -883,7 +884,7 @@ class _YearPickerScreenState extends State<Accueil> {
                               TextSpan(
                                 text: "2 KDhs ",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
+                                  color: KSecondaryColor,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
                                 ),
@@ -920,15 +921,15 @@ class _YearPickerScreenState extends State<Accueil> {
                                   TextSpan(
                                     text: "Whatsapp : ",
                                     style: TextStyle(
-                                      color: Color(0xFF880E4F),
-                                      fontFamily: 'LouisGeorgeCafe',
+                                      color: KSecondaryColor,
+                                      fontFamily: wePosfontFamily,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                   TextSpan(
                                     text: "25000",
                                     style: TextStyle(
-                                      color: Color(0xFF880E4F),
+                                      color: KSecondaryColor,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -959,15 +960,15 @@ class _YearPickerScreenState extends State<Accueil> {
                                   TextSpan(
                                     text: "Sms : ",
                                     style: TextStyle(
-                                      color: Color(0xFF880E4F),
-                                      fontFamily: 'LouisGeorgeCafe',
+                                      color: KSecondaryColor,
+                                      fontFamily: wePosfontFamily,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                   TextSpan(
                                     text: "3500",
                                     style: TextStyle(
-                                      color: Color(0xFF880E4F),
+                                      color: KSecondaryColor,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -998,15 +999,15 @@ class _YearPickerScreenState extends State<Accueil> {
                                   TextSpan(
                                     text: "Email : ",
                                     style: TextStyle(
-                                      color: Color(0xFF880E4F),
-                                      fontFamily: 'LouisGeorgeCafe',
+                                      color: KSecondaryColor,
+                                      fontFamily: wePosfontFamily,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                   TextSpan(
                                     text: "2000",
                                     style: TextStyle(
-                                      color: Color(0xFF880E4F),
+                                      color: KSecondaryColor,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -1028,15 +1029,15 @@ class _YearPickerScreenState extends State<Accueil> {
                               TextSpan(
                                 text: "Totale de messages : ",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
-                                  fontFamily: 'LouisGeorgeCafe',
+                                  color: KSecondaryColor,
+                                  fontFamily: wePosfontFamily,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               TextSpan(
                                 text: "4020",
                                 style: TextStyle(
-                                  color: Color(0xFF880E4F),
+                                  color: KSecondaryColor,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -1091,7 +1092,7 @@ class _YearPickerScreenState extends State<Accueil> {
             width: 70,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/mainImage.png'),
+                image: AssetImage('assets/images/Amine.jpeg'),
                 fit: BoxFit.cover,
               ),
               shape: BoxShape.circle,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wepos/constants.dart';
 
 class PaiementButton extends StatefulWidget {
   final String label;
@@ -37,10 +38,10 @@ class _HoverButtonState extends State<PaiementButton> {
         width: 100,
         padding: EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: _isHovered ? Color(0xFF86044E) : Color(0xFFFFF9F7),
+          color: _isHovered ? Color(0xFF86044E) : KMainColor,
           borderRadius: BorderRadius.circular(50),
           border: Border.all(
-            color: Color(0xFFFDDCD0),
+            color: KBorderColor,
             width: 1.0,
           ),
         ),

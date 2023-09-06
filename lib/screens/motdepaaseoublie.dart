@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:wepos/constants.dart';
 import 'package:wepos/screens/animation/FadeAnimation.dart';
 import 'package:wepos/screens/login.dart';
 
@@ -57,7 +58,7 @@ class MotDePasseOublie extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 25,
                                 fontWeight: FontWeight.bold,
-                                fontFamily: 'LouisGeorgeCafe',
+                                fontFamily: wePosfontFamily,
                                 color: Color(0xFF718696)),
                           )),
                       SizedBox(
@@ -218,7 +219,7 @@ Widget nameTextField() {
           hintStyle: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.bold,
-              fontFamily: 'LouisGeorgeCafe',
+              fontFamily: wePosfontFamily,
               color: Color(0xFF718696)),
           contentPadding: EdgeInsets.symmetric(
             horizontal: 10,
