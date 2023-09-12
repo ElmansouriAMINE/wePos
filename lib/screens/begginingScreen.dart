@@ -15,7 +15,7 @@ class _BegginingScreenState extends State<BegginingScreen> {
       body: Column(
         children: [
           SizedBox(
-            height: 100,
+            height: 80,
             child: Container(
               decoration: BoxDecoration(color: Color(0xFFF5F5F5)),
             ),

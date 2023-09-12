@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wepos/screens/userprofile.dart';
 
 class WePosAppBar extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
@@ -44,17 +45,37 @@ class WePosAppBar extends StatelessWidget {
               width: 120,
             ),
           ),
-          Container(
-            height: 90,
-            width: 70,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/Amine.jpeg'),
-                fit: BoxFit.cover,
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => UserProfile(),
+                ),
+              );
+            },
+            child: Container(
+              height: 90,
+              width: 70,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/Amine.jpeg'),
+                  fit: BoxFit.cover,
+                ),
+                shape: BoxShape.circle,
               ),
-              shape: BoxShape.circle,
             ),
           ),
+          // Container(
+          //   height: 90,
+          //   width: 70,
+          //   decoration: BoxDecoration(
+          //     image: DecorationImage(
+          //       image: AssetImage('assets/images/Amine.jpeg'),
+          //       fit: BoxFit.cover,
+          //     ),
+          //     shape: BoxShape.circle,
+          //   ),
+          // ),
         ],
       ),
     );

@@ -381,9 +381,9 @@ class Bottom extends StatefulWidget {
 class _BottomState extends State<Bottom> {
   int index_color = 0;
   List<Widget> screen = [
-    ListeClients(),
     Accueil(),
-    AjouterClient(),
+    ListeClients(),
+    NouvelleVente(),
     Messagerie(),
   ];
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -513,7 +513,7 @@ class _BottomState extends State<Bottom> {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => SpalshScreen(),
+                    builder: (context) => choiceui(),
                   ),
                 );
               },

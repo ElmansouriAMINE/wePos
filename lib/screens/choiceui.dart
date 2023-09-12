@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wepos/constants.dart';
+import 'package:wepos/screens/listproduits.dart';
 
 class choiceui extends StatefulWidget {
   const choiceui({super.key});
@@ -79,12 +80,21 @@ class _choiceuiState extends State<choiceui> {
                           children: [
                             Expanded(
                               flex: 3,
-                              child: Image.asset(
-                                'assets/images/produit_logo.png',
-                                scale: 0.8,
-                                color: isHoveredProduits
-                                    ? Color(0xFFFFFFFF)
-                                    : Color(0xFFCCB8A8),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) => ListProduits(),
+                                    ),
+                                  );
+                                },
+                                child: Image.asset(
+                                  'assets/images/produit_logo.png',
+                                  scale: 0.8,
+                                  color: isHoveredProduits
+                                      ? Color(0xFFFFFFFF)
+                                      : Color(0xFFCCB8A8),
+                                ),
                               ),
                             ),
                             SizedBox(
@@ -92,15 +102,24 @@ class _choiceuiState extends State<choiceui> {
                             ),
                             Expanded(
                               flex: 1,
-                              child: Text(
-                                "Produits",
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    fontFamily: wePosfontFamily,
-                                    fontWeight: FontWeight.bold,
-                                    color: isHoveredProduits
-                                        ? Color(0xFFFFFFFF)
-                                        : Color(0xFFCCB8A8)),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) => ListProduits(),
+                                    ),
+                                  );
+                                },
+                                child: Text(
+                                  "Produits",
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontFamily: wePosfontFamily,
+                                      fontWeight: FontWeight.bold,
+                                      color: isHoveredProduits
+                                          ? Color(0xFFFFFFFF)
+                                          : Color(0xFFCCB8A8)),
+                                ),
                               ),
                             ),
                           ],
